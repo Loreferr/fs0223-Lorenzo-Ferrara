@@ -1,0 +1,68 @@
+header{
+    text-align: center; 
+}
+
+
+main{
+    margin-left: 33%; margin-right: 33%;
+}
+
+
+
+.colore-grigio{ color: dimgray; text-align: center;
+}
+
+.colore-blu{ color: aqua;  background-color: rgb(240, 237, 212)
+    ;
+}
+
+
+
+
+
+
+.titolo{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+article{
+    margin-left: auto;
+}
+
+
+
+
+
+
+h3{
+    color: coral;
+}
+
+a{
+  color: rgb(14, 84, 165);  
+}
+
+h4{
+    font-weight: bolder;
+}
+
+
+h1{
+    text-align: center;
+}
+
+
+
+hr{
+    margin-bottom: 5%; margin-top: 5%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+ul{
+    font-weight: 500;
+}
+
