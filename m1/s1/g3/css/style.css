@@ -9,11 +9,13 @@ main{
 
 
 
+
+
 .colore-grigio{ color: dimgray; text-align: center; padding-top: 0%; padding-bottom: 5%;
 }
 
-.colore-blu{ color: aqua;  background-color: rgb(240, 237, 212)
-    ;
+.colore-blu b{ color: aqua; padding: 10px
+    ; text-transform: uppercase;
 }
 
 
@@ -29,6 +31,10 @@ main{
 article{
     margin-left: auto;
 }
+
+#logo-content{
+    border-top: solid 1px; background-color: darkkhaki;
+} 
 
 
 

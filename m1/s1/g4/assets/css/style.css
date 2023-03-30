@@ -1,0 +1,214 @@
+/* IMPOSTAZIONI GENERALI */
+
+body{
+    font-family: 'poppins' , sans-serif ;
+}
+/* HEADER */
+#blocco-header{
+    margin: 20px;
+    
+    text-align: center;
+    background-color: #2596be;
+    
+
+}
+#blocco-logo p{
+    color: white;
+    text-transform: uppercase;
+}
+
+#blocco-logo img{
+    padding: 20px;
+}
+
+#blocco-header nav{
+    padding: 20px;
+}
+
+body{
+    background-size: contain 50%;
+    background-image: url(../img/sfondo.png)
+    
+    
+
+}
+
+/* MAIN */
+
+#main-content{
+    
+    margin: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid rgb(230, 230, 224);
+}
+
+section{
+    background-color:  rgb(231, 231, 224);
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid  rgb(143, 143, 140);
+    
+}
+
+section h2{
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: x-large;
+
+}
+
+fieldset{
+    padding: 20px;
+}
+
+aside h2{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: bold;
+    font-size: x-large;
+    
+    
+}
+
+aside div{
+    background-color: rgb(231, 231, 224);
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid  rgb(143, 143, 140);
+    line-height: 20px;
+}
+
+
+
+a{
+    padding-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid;
+    
+  }
+table {
+    background-color:rgb(235, 235, 228) ;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+table thead{
+    background-color: rgb(41, 143, 238);
+    padding: 20px;
+    margin: 20px;
+}
+
+nav ul{
+    color: white;
+    
+    
+}
+nav ul li a{
+    color: white;
+    padding: 20px;
+}
+
+h1{
+    font-size: x-large;
+    font-weight: bold;
+    padding: 30px;
+    line-height: 40px;
+}
+
+button{
+    background-color:rgb(41, 143, 238) ;
+}
+
+input{
+    border: hidden;
+    border-bottom: dotted;
+}
+
+caption{
+    padding-top: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+iframe{
+   width: 100%;
+   border-radius: 15%;
+}
+
+footer{
+    background-color: #2596be;
+    margin: 20px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+article{
+    padding: 20px;
+}
+
+article ol {
+    padding: 20px;
+}
+
+article ul{
+    padding: 20px;
+}
+
+table tr{
+    padding: 20px;
+    margin: 20px;
+}
+
+    
+code{
+    background-color: rgb(161, 161, 156);
+    border-radius: 20%;
+}
+
+strong{
+    color: brown;
+}
+
+ul li{
+    line-height: 20px;
+}
+
+article p{
+    line-height: 20px;
+}
+
+ol li{
+    line-height: 20px;
+}
+
+.testo1{
+    padding-bottom: 30px;
+    color: rgb(189, 189, 180);
+}
+
+footer p{
+    padding: 10px;
+}
+
+footer a{
+    color: darkmagenta;
+}
+
+
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+
+/* TABELLE */
+
+/* FORM */
+
+/* ELEMENTI NELL' ASIDE */
+
+/* FOOTER */
