@@ -18,7 +18,7 @@ body{
 
 h1 {
     font-size: 250%;
-    padding-top: 30px;
+    padding-top: 70px;
     padding-bottom: 30px;
     line-height: 100px;
 }
@@ -31,7 +31,8 @@ h3{
 
 .paragrafo1{
     font-size: 130%;
-    padding: 40px;
+    padding: 30px;
+    padding-top: 55px;
 }
 
 button{
@@ -52,7 +53,7 @@ button{
 
 header{
     background-color: black;
-    padding: 35px;
+    padding: 40px;
     
     
 }
@@ -69,11 +70,13 @@ div p{
 
 
 main .blocco1{
+    margin-bottom: 40px;
     
     height: 530px;
     padding-bottom: 50px;
     background-size: cover;
     background-image: url(../images/banner.jpg)
+    
     
     
     
