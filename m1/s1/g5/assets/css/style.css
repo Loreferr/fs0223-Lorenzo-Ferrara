@@ -192,32 +192,32 @@ footer{
     color: white;
 }
 footer a{
-    color: rgb(243, 238, 238);
+    color: rgb(218, 216, 216);
 }
 hr{
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 120px;
+    margin-right: 120px;
     margin-bottom: 40px;
     margin-top: 40px;
 }
 
 footer p{
-    color: rgb(243, 238, 238);
+    color: rgb(218, 216, 216);
     padding-bottom: 80px;
 }
 
 footer h2{
     
     padding-top: 50px;
-    font-size: 250%;
+    font-size: 230%;
 }
 
 footer p a{
-    color: rgb(202, 201, 201);
+    color:  rgb(218, 216, 216);
 }
 
 footer ul{
-    color:rgb(243, 238, 238) ;
+    color: rgb(218, 216, 216) ;
     font-size: 120%;
 }
 
