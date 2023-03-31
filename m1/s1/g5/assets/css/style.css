@@ -1,0 +1,234 @@
+/* Your styles here */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #393d41;
+    font-size: 1.2rem;
+    line-height: 1.65;
+    text-align: center;
+}
+
+*{box-sizing: border-box;}
+
+.headings {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1;
+    color: #25a2c3;
+}
+
+h1 {
+    font-size: 250%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    line-height: 100px;
+}
+
+h3{
+    padding-bottom: 20px;
+}
+
+
+
+.paragrafo1{
+    font-size: 130%;
+    padding: 40px;
+}
+
+button{
+    font-size: 100%;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 5%;
+    border: none;
+    background-color: #f04c2f;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+header{
+    background-color: black;
+    padding: 35px;
+    
+    
+}
+
+header img{
+    width: 40%;
+    
+}
+
+div p{
+    padding: 50px;
+    margin-top: -50px;
+}
+
+
+main .blocco1{
+    
+    height: 530px;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-image: url(../images/banner.jpg)
+    
+    
+    
+    
+}
+
+section{
+    font-size: 130%;
+    padding-top: 40px;
+    
+    
+}
+
+
+.ultima-sezione{
+    padding-bottom: 80px;
+}
+main img{
+    border-radius: 100%;
+    padding: 30px;
+    width: 90%;
+}
+
+.testimonianze{
+    margin-bottom: 80px;
+    
+    background-color: #e22d0e;
+}
+
+h2{
+    color: white;
+    font-family: "Montserrat";
+    font-size: 160% ;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+span{
+    
+    font-size: smaller;
+    color: white;
+    font-style: italic
+    
+    
+    
+}
+
+
+
+
+
+
+.testimonianze p{
+    
+    padding: 30px;
+    color: white;
+}
+b{
+    padding-top: 20px;
+    font-size: x-large;  
+}
+.testimonianze div p{
+    font-size: 80%;
+}
+
+aside{
+    font-size: 110%;
+    font-family: 'Open Sans';
+    margin: 30px;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    
+}
+
+article{
+    
+    
+    margin-top: 50px;
+    border: 1px solid rgb(226, 221, 221);
+    border-radius: 5px;
+}
+
+
+article h4{
+    padding-top: 20px;
+}
+
+article img{
+    width: 100%;
+}
+
+
+    
+
+
+article p{
+    padding-bottom: 50px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+footer{
+    background-color: #25a2c3;
+    color: white;
+}
+footer a{
+    color: rgb(243, 238, 238);
+}
+hr{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+footer p{
+    color: rgb(243, 238, 238);
+    padding-bottom: 80px;
+}
+
+footer h2{
+    
+    padding-top: 50px;
+    font-size: 250%;
+}
+
+footer p a{
+    color: rgb(202, 201, 201);
+}
+
+footer ul{
+    color:rgb(243, 238, 238) ;
+    font-size: 120%;
+}
+
+
+footer i{
+    padding: 5px;
+}
+
+
+
+
+    
+
+    
+
+
+    
+    
+
+
+
+
+
+
+
