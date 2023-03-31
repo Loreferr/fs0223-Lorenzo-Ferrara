@@ -71,6 +71,7 @@ div p{
 
 main .blocco1{
     margin-bottom: 40px;
+    background-position: center;
     
     height: 530px;
     padding-bottom: 50px;
@@ -88,6 +89,12 @@ section{
     padding-top: 40px;
     
     
+}
+
+section div{
+    padding-bottom: 25px;
+
+    font-size: 80%;
 }
 
 
@@ -111,7 +118,7 @@ h2{
     font-family: "Montserrat";
     font-size: 160% ;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 span{
@@ -131,7 +138,8 @@ span{
 
 .testimonianze p{
     
-    padding: 30px;
+    padding-top:  20px;
+    padding-bottom: 30px;
     color: white;
 }
 b{
@@ -173,7 +181,7 @@ article img{
 
 
 article p{
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     padding-right: 30px;
     padding-left: 30px;
     padding-top: 10px;
