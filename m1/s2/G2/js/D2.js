@@ -27,7 +27,7 @@ Array : Richiede le [].
  Crea una variable chiamata "name" e assegna ad essa il tuo nome, sotto forma di stringa.
 */
 
-let nome = "Cristiano";
+let nome = "Lorenzo";
 
 
 
