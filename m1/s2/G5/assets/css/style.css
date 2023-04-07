@@ -92,8 +92,14 @@ p{
     padding-right: 35px;
 }
 
+#contenitore0{
+    background-color: white;
+    
+}
+
 .inlinea{
     display: inline-block;
+    
     
     
     
@@ -148,6 +154,7 @@ p{
     margin-top: -10px;
     
     
+    
 }
 
 h3{
@@ -171,7 +178,9 @@ h3{
 #contenitore{
     background-color: white;
     border: 1px solid; color: #7b7c7e25;
-    margin-top: 50px;
+    margin-top: 20px;
+    padding-right: 40px;
+    
     
 }   
 
