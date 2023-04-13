@@ -34,7 +34,7 @@ const changeTitle = function () {
       */
 
        const changeUrls = function () {
-        for (const element of document.querySelectorAll('body a')) {
+        for (const element of document.querySelectorAll('body div a')) {
             element.href = 'https://www.google.com'
             
         }
@@ -114,8 +114,9 @@ const changeTitle = function () {
    
        const revealFooterLink = function () {
         let footer = document.querySelector('footer')
+        let url = footer.querySelector('a').href
         footer.addEventListener("click",function(){
-            alert(document.querySelector('footer a').href)
+            alert(url)
         }
         )
    
