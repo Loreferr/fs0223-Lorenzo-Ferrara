@@ -150,7 +150,7 @@ console.log(onlyLetters("I have 4 dogs"))
 */
 
 
- function isThisAnEmail() {
+ /*function isThisAnEmail() {
   var email = "lf.95@outlook.com";
   var reg = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
   var result = reg.test(email);
@@ -161,7 +161,18 @@ console.log(onlyLetters("I have 4 dogs"))
   }
   return false;
 }
-console.log(isThisAnEmail())
+console.log(isThisAnEmail())*/
+
+function isThisAnEmail(str) {
+  
+  let mail = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+  
+  return mail.test(str);
+  }
+  
+  
+  console.log(isThisAnEmail("lf.95@outlook.com")); 
+  console.log(isThisAnEmail("questa non è un'email")); 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 
@@ -495,10 +506,9 @@ td()
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 function stamp() {
-  for (let index = 0; index < document.querySelectorAll('td').length; index++) {
-    const element = document.querySelectorAll('td')[index];
-    console.log(element);
-    
+  let tds = document.getElementsByTagName('td');
+  for (let index = 0; index < tds.length; index++) {
+    console.log(tds[index].textContent)
   }
   
 }
@@ -507,9 +517,9 @@ stamp()
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 function colore() {
-  for (let index = 0; index < movies.length; index++) {
-    const element = movies[index];
-    element.Poster.style.backgroundcolor = 'red'
+  let a = document.querySelectorAll('body a')
+  for (let i = 0; i < a.length; i++) {
+    a[i].style.backgroundColor = 'red'
     
   }
 }
@@ -519,27 +529,37 @@ colore()
 
 */
 function push() {
-  let li = document.getElementById('myList')
-  li.push('li')
+  let ul = document.getElementById('myList')
+  let li = document.createElement('li')
+  ul.append(li)
+  li.append('07')
   
 }
+push()
+
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 function svuota() {
-  let list = getElementById('myList')
-  list.empty()
-  
+  let li = document.getElementById("myList");
+  while (li.firstChild) {
+    li.removeChild(li.firstChild);
+  }
 }
-svuota();
+svuota()
+
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 function add() {
   let tr = document.querySelectorAll('tr')
-  tr.classList.add('test')
+  for (let index = 0; index < tr.length; index++) {
+    tr[index].classList.add('test')
+    
+  }
+  
   
 }
 add()
