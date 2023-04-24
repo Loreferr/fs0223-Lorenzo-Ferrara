@@ -111,13 +111,14 @@ main {
   position: relative;
 }
 
-span{
+.clearfix span{
   position: relative;
 }
 .underline{
+  width: 100%;
   position: absolute;
   right: 0;
-  top: 5px;
+  bottom: -28px;
 }
 
 .pulsanti button{
@@ -267,12 +268,7 @@ h1 + p {
   }
 }
 
-.underline{
-  width: 100%;
-  position: relative;
-  bottom: 40px;
-  
-}
+
 
 .imgLeft {
   float: left;
