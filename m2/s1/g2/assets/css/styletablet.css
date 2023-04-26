@@ -1,0 +1,140 @@
+main{
+    margin: auto;
+    color: #612406;
+    font-family: 'Inter', sans-serif;
+}
+header{
+    background-color: #FBF7E3;
+
+}
+ul{
+    padding-right: 40px;
+    height: 120px;
+    
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    background-color: #FBF7E3;
+    align-items: center;
+    
+}
+
+li img{
+    width: 50px;
+}
+
+li{
+    padding-left: 22px;
+    padding-top: 12px;
+    padding-right: 22px;
+    border-radius: 50px;
+    
+    
+    height: 20px;
+    font-size: 0.5em;
+    background-color:#F3DF85;
+    font-size: 0.6em;
+    color: #612406;
+    font-weight: 600;
+}
+.self{
+    
+    height: 60px;
+    width: 150px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.terzo{
+
+display: flex;
+justify-content: space-between;
+
+align-items: center;
+}
+
+h1,h2{
+    font-weight: 900;
+}
+
+section{
+    width: 330px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    border-radius: 15%;
+    background-color: #FBF7E3;
+}
+
+
+
+img{
+    width: 100%;
+}
+.testo{
+    display: flex;
+    justify-content: space-around;
+    color: #612406;
+    
+}
+.testo p{
+    margin-top: 25px;
+    font-size: 18px;
+}
+h3 span{
+    margin-left: 6px;
+    font-weight: 500;
+    font-size: 15px;
+   
+}
+h3{
+    line-height: 20px;
+}
+
+
+section button{
+    display: block;
+    border: none;
+    border-radius: 30px;
+    height: 30px;
+    width: 180px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: #F3DF85;
+    color: #612406;
+    font-size: 15px;
+    font-weight: 600;
+}
+.contenitoreCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.articolo{
+    font-family: 'Inter', sans-serif;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #FBF7E3;
+    color: #612406;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.testoNews h3{
+    font-weight: 900;
+}
+.testoNews p{
+    font-weight: 400;
+    line-height: 22px;
+}
+.testoNews{
+    flex-direction: column;
+}

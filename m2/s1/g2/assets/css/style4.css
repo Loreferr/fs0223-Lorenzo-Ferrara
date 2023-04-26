@@ -1,0 +1,19 @@
+.articolo{
+    font-family: 'Inter', sans-serif;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #FBF7E3;
+    color: #612406;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.testo h3{
+    font-weight: 900;
+}
+.testo p{
+    font-weight: 400;
+    line-height: 22px;
+}

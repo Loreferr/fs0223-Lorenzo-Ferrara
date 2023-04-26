@@ -1,0 +1,14 @@
+.articolo{
+    display: flex;
+    background-color: #FBF7E3;
+    color: #612406;
+    margin: 0 auto;
+    padding: 15px;
+    
+}
+.testo{
+    padding: 20px;
+}
+.testo h3{
+    font-weight: 900;
+}

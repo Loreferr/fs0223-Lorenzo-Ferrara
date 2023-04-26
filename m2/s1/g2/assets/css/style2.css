@@ -1,0 +1,46 @@
+ul{
+    padding-right: 40px;
+    height: 120px;
+    border-radius: 60px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    background-color: #FBF7E3;
+    align-items: center;
+    
+}
+
+li img{
+    width: 50px;
+}
+
+li{
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-right: 10px;
+    border-radius: 50px;
+    width: 60px;
+    
+    height: 20px;
+    font-size: 0.5em;
+    background-color:#F3DF85;
+    font-size: 0.6em;
+    color: #612406;
+    font-weight: 600;
+}
+.self{
+    
+    height: 60px;
+    width: 150px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.terzo{
+
+display: flex;
+justify-content: space-between;
+padding-left: 10px;
+
+}

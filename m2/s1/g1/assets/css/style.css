@@ -20,7 +20,7 @@ hr {
 header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   
   background: rgb(0, 160, 198);
   background: linear-gradient(180deg, rgba(0, 160, 198, 1) 0%, rgba(3, 109, 134, 1) 68%);
@@ -113,12 +113,26 @@ main {
 
 .clearfix span{
   position: relative;
+  z-index: 1;
+  
 }
+.clearfix .underline{
+  z-index: -1;
+  
+}
+
+.clearfix{
+  
+  position: relative;
+}
+
+
 .underline{
+  
   width: 100%;
   position: absolute;
   right: 0;
-  bottom: -28px;
+  bottom: -15px;
 }
 
 .pulsanti button{
