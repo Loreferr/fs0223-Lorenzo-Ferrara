@@ -27,19 +27,19 @@ i{
 
 i:first-child{
 
-    animation: animateMe1 5s linear 0s infinite;
+    animation: animateMe1 6s linear 0s infinite;
 
 }
 
 i:nth-child(2){
 opacity: 0%;
-animation: animateMe2 5s linear 1.5s infinite;
+animation: animateMe2 6s linear 2s infinite;
 
 }
 
 i:last-child{
     opacity: 0%;
-    animation : animateMe3 5s linear 3s infinite;
+    animation : animateMe3 6s linear 4s infinite;
 }
 
 
