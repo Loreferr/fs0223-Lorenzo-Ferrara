@@ -1,0 +1,87 @@
+.contenitore{
+    font-family: 'Indie Flower', cursive;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #666666;
+    width: 1200px;
+    height: 450px;
+}
+.box{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 170px;
+    box-shadow: 5px 5px 10px -2px #000000;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 80%, rgba(0,0,0,0.8) 100%);
+    transition: 1s;
+
+}
+h2{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 1.5em;
+}
+
+.uno{
+    background-color: #F6F6C4;
+    transform: rotate(353deg);
+    translate: 10px;
+    
+}
+
+.due{
+    background-color: #C8F7C9;
+    transform: rotate(5deg);
+}
+
+.tre{
+    background-color: #C7C6F0;
+    transform: rotate(350deg);
+}
+
+.quattro{
+    background-color: #C8F7C9;
+    transform: rotate(10deg);
+    translate: -15px -5px;
+}
+
+.cinque{
+    background-color: #F6F6C4;
+    transform: rotate(353deg);
+    translate: 10px -10px;
+}
+
+.sei{
+    background-color: #C7C6F0;
+    transform: rotate(348deg);
+    translate: 0px -15px;
+
+}
+.sette{
+    background-color: #F6F6C4;
+    transform: rotate(355deg);
+
+}
+
+.otto{
+    background-color: #C8F7C9;
+    transform: rotate(5deg);
+    translate: -15px 0;
+
+}
+
+.box:hover{
+    transform: scale(1.2) rotate(0deg);
+    box-shadow: 8px 8px 11px 3px rgba(0,0,0,0.65);
+    position: relative;
+    z-index: 1;
+}
+
