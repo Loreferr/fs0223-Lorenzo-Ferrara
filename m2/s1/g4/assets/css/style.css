@@ -131,7 +131,7 @@ button{
 }
 .testo2{
     margin-top: 50px;
-    margin-left: 350px;
+    margin-left: 300px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -242,7 +242,7 @@ section{
     border-radius: 50%;
 }
 .separatore h3{
-    line-height: 28px;
+    line-height: 25px;
     width: 450px;
     position: relative;
     top: 20px;
