@@ -16,7 +16,7 @@ nav{
 }
 
 .boxHead{
-    
+    font-family: 'Roboto', sans-serif;
     height: 75px;
     width: 100%;
     background-color: #FFC017;
@@ -26,6 +26,27 @@ nav{
     align-items: center;
     border-bottom: 1px solid black;
 }
+
+.boxHead2{
+    font-family: 'Roboto', sans-serif;
+    height: 75px;
+    width: 100%;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.boxHead2 button{
+    background-color: #1a8917;
+    width: 105px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+}
+
 
 ul{
     margin-left: 20px;
@@ -60,7 +81,7 @@ li{
 }
 
 h1{
-    
+    letter-spacing: -9px;
     font-family: 'Spectral', serif;
     position: relative;
     bottom: 50px;
@@ -121,7 +142,8 @@ button{
 }
 
 .articoli{
-    margin: 0 350px;
+    padding-left: 300px;
+    padding-right: 350px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -160,7 +182,7 @@ article{height: 77px;
     justify-content: flex-start;
     align-items: center;
 }
-h4{margin-bottom: 45px;
+h4{margin-bottom: 55px;
     font-size: 34px;
     color: rgba(230, 230, 230, 1);
     letter-spacing: -0.014em;
@@ -171,6 +193,7 @@ h4{margin-bottom: 45px;
 }
 .star{
     
+    justify-content: flex-start;
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -188,7 +211,7 @@ h4{margin-bottom: 45px;
     align-items: center;
     border-top: 1px solid rgb(228, 222, 222);
     margin-top: 30px;
-    margin: 0 300px;
+    padding: 0 300px;
     
     
 }
@@ -267,7 +290,7 @@ section{
 }
 
 b{
-    
+    padding: 2px 5px;
     background-color: #E6E6E6;
     border-radius: 10px;
 }
@@ -330,8 +353,14 @@ aside .link2 button{
 
 .sticky{
     position: sticky;
-    top: 0;
+    top: 100;
 }
+
+
+.tre{
+    margin-right: 53px;
+}
+
 
 
 
