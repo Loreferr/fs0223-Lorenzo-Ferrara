@@ -309,7 +309,7 @@ b{
 aside{
     
     position: relative;
-    bottom: 550px;
+    bottom: 590px;
     margin-right: 100px;
     margin-left: 80px;
     
@@ -351,10 +351,6 @@ aside .link2 button{
     padding-top: 30px;
 }
 
-.sticky{
-    position: sticky;
-    top: 100;
-}
 
 
 .tre{
