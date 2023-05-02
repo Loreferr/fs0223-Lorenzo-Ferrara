@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/a75109421f.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navb">
+        <div class="logo">
+          <h2>TRAVEL</h2>
+        </div>
+        <ul>
+          <li>Home</li>
+          <li>Package</li>
+          <li>Destination</li>
+          <li>Contact Us</li>
+        </ul>
+      </nav>
+
+      <div class="hero">
+        <div class="box">
+          <h1>
+            Fuel Mind <br />
+            Travel
+          </h1>
+
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Consequatur doloribus inventore amet recusandae
+          </p>
+
+          <button>Let's go Now</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="section1">
+        <h2>
+          Start Your Vacation <br />
+          with Lots of Services!
+        </h2>
+        <div class="container">
+          <div class="card">
+            <i class="fa-sharp fa-light fa-ship"></i>
+            <p>Ship Cruises</p>
+            <span>150 properties</span>
+          </div>
+          <div class="card">
+            <i class="fa-regular fa-ship"></i>
+            <p>Ship Cruises</p>
+            <span>150 properties</span>
+          </div>
+          <div class="card">
+            <i class="fa-regular fa-ship"></i>
+            <p>Ship Cruises</p>
+            <span>150 properties</span>
+          </div>
+          <div class="card">
+            <i class="fa-regular fa-ship"></i>
+            <p>Ship Cruises</p>
+            <span>150 properties</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      let navbar = document.querySelector(".navb");
+      document.addEventListener("scroll", function () {
+        //document.scrollingElement.scrollTop
+        console.log(document.scrollingElement.scrollTop);
+        if (document.scrollingElement.scrollTop >= 20) {
+          navbar.classList.replace("navb", "navb2");
+        } else {
+          navbar.classList.replace("navb2", "navb");
+        }
+      });
+    </script>
+  </body>
+</html>

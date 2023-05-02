@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+    margin: auto;
+    
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+header{
+    background-image: url(../img/neom-_jfejQo2tZw-unsplash.jpg);
+    background-size: cover;
+    height: 980px;
+    
+    
+}
+.logo h1{
+    font-size: 1.5em;
+}
+
+.navb{
+    position: sticky;
+    top: 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.navb2{
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+}
+
+li{
+    margin-right:50px;
+    font-size: 1.3em;
+}
+
+.hero{
+    color: white;
+    padding-top: 100px;
+    padding-left: 290px;
+    margin: 0;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero h1{
+    font-weight: 700;
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+
+.hero p{
+    line-height: 25px;
+    margin-bottom: 30px;
+    opacity: 70%;
+}
+
+.hero button{
+    opacity: 70%;
+    width: 150px;
+    height: 50px;
+    color: darkorange;
+    transition: 500ms;
+}
+
+.hero button:hover{
+    scale: 1.1;
+    opacity: 100%;
+}
+
+.section1{
+    margin-top: 60px;
+    
+}
+.section1 h2{
+    padding-left: 300px;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+.container{
+    margin-top: 70px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    margin: 0;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgba(202, 198, 198, 0.616);
+    text-align: center;
+    transition: 500ms;
+}
+
+.card p{
+    
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.card:hover{
+    box-shadow: 2px 2px 12px 2px  rgba(202, 198, 198, 0.616);
+    scale: 1.1;
+}
