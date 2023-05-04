@@ -101,7 +101,6 @@ header nav ul li a {
   color: black;
 }
 header #hero {
-  animation: fadeIn 2s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,14 +112,18 @@ header #hero .img {
 header #hero img {
   width: 500px;
 }
+header #hero .img, header .headlines {
+  animation: fadeIn 2s;
+}
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    transform: translatey(-30px);
   }
   100% {
     opacity: 1;
-    transform: translatey(10px);
+    transform: translatey(0px);
   }
 }
 main .container {
