@@ -1,0 +1,27 @@
+.b1{
+    @include applicationButton;
+    background-color: $button1-color;
+    &:hover{
+        opacity: 100%;
+        scale: 1.2
+    }
+    
+}
+
+.b2{
+    @include applicationButton;
+    background-color: $button2-color;
+    &:hover{
+        opacity: 100%;
+        scale: 1.2;
+    }
+}
+
+.b3{
+    @include applicationButton;
+    background-color: $button3-color;
+    &:hover{
+        opacity: 100%;
+        scale: 1.2;
+    }
+}
