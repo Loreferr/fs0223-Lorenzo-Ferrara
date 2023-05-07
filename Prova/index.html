@@ -1,87 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/a75109421f.js"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <style>
+      img {
+        max-width: 100%;
+      }
+      .carousel-container {
+        width: 1100px;
+        margin: 50px auto;
+        position: relative;
+        border-left-width: 4px;
+        border-left-style: solid;
+        border-left-color: #aaa;
+      }
+      @media (max-width: 768px) {
+        .carousel-container {
+          width: 95%;
+        }
+      }
+      .inner-carousel {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+      }
+      .track {
+        display: inline-flex;
+        height: 100%;
+        transition: transform 0.2s ease-in-out;
+      }
+      .card-container {
+        width: 275px;
+        height: 400px;
+        flex-shrink: 0;
+        padding-right: 10px;
+      }
+      @media (max-width: 768px) {
+        .card-container {
+          width: 184px;
+        }
+      }
+      .card {
+        width: 100%;
+        height: 100%;
+        /*display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;*/
+        background-position: center bottom;
+        background-size: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+      }
+      .card1 {
+        background-image: url("https://cdn.pixabay.com/photo/2018/08/21/23/29/fog-3622519_960_720.jpg");
+      }
+      .card2 {
+        background-image: url("https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_960_720.jpg");
+      }
+      .card3 {
+        background-image: url("https://cdn.pixabay.com/photo/2016/08/11/23/48/italy-1587287_960_720.jpg");
+      }
+      .card4 {
+        background-image: url("https://cdn.pixabay.com/photo/2014/08/29/03/02/horse-430441_960_720.jpg");
+      }
+      .card5 {
+        background-image: url("https://cdn.pixabay.com/photo/2014/12/08/17/52/mare-561221_960_720.jpg");
+      }
+      .card6 {
+        background-image: url("https://cdn.pixabay.com/photo/2017/02/08/17/24/butterfly-2049567_960_720.jpg");
+      }
+      .card7 {
+        background-image: url("https://cdn.pixabay.com/photo/2017/11/30/22/00/pumpkin-2989569_960_720.jpg");
+      }
+      .card8 {
+        background-image: url("https://cdn.pixabay.com/photo/2016/07/24/22/25/woman-1539416_960_720.jpg");
+      }
+      .card9 {
+        background-image: url("https://cdn.pixabay.com/photo/2017/11/15/09/28/music-player-2951399_960_720.jpg");
+      }
+      .card10 {
+        background-image: url("https://cdn.pixabay.com/photo/2018/02/23/04/38/laptop-3174729_960_720.jpg");
+      }
+      .card11 {
+        background-image: url("https://cdn.pixabay.com/photo/2016/03/09/09/30/woman-1245817_960_720.jpg");
+      }
+      .card12 {
+        background-image: url("https://cdn.pixabay.com/photo/2016/11/08/05/31/adorable-1807544_960_720.jpg");
+      }
+
+      .nav button {
+        position: absolute;
+        top: 50%;
+        transform: translatey(-50%);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        outline: none;
+        border: 1px solid #000;
+        cursor: pointer;
+      }
+      .nav .prev {
+        left: -30px;
+        display: none;
+      }
+      .nav .prev.show {
+        display: block;
+      }
+      .nav .next {
+        right: -30px;
+      }
+      .nav .next.hide {
+        display: none;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
+    />
   </head>
   <body>
-    <header>
-      <nav class="navb">
-        <div class="logo">
-          <h2>TRAVEL</h2>
-        </div>
-        <ul>
-          <li>Home</li>
-          <li>Package</li>
-          <li>Destination</li>
-          <li>Contact Us</li>
-        </ul>
-      </nav>
+   "<div class=\"container text-center my-3\">\n    <h2 class=\"font-weight-light\">Bootstrap 4 Multi Item Carousel</h2>\n    <div class=\"row mx-auto my-auto justify-content-center\">\n        <div id=\"recipeCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n            <div class=\"carousel-inner\" role=\"listbox\">\n                <div class=\"carousel-item active\">\n                    <div class=\"col-lg-2\">\n                        <div class=\"movie-card m-1\">\n                            <div class=\"movie-img\">\n                                <a href=\"#\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9i-t0o_ltZf_c5ZQ4F4kbuETdhNDdxsjIYKaofkjTM3BmHTqc\" class=\"img-fluid\"></a>\n                            </div>\n                            <div class=\"movie-title\">\n                                <a href=\"#\">\n                                    <p class=\"text-white text-sm-center font-small flex-center\">Slide 1</p>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"carousel-item\">\n                    <div class=\"col-lg-2\">\n                        <div class=\"movie-card m-1\">\n                            <div class=\"movie-img\">\n                                <a href=\"#\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9i-t0o_ltZf_c5ZQ4F4kbuETdhNDdxsjIYKaofkjTM3BmHTqc\" class=\"img-fluid\"></a>\n                            </div>\n                            <div class=\"movie-title\">\n                                <a href=\"#\">\n                                    <p class=\"text-white text-sm-center font-small flex-center\">Slide 2</p>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"carousel-item\">\n                    <div class=\"col-lg-2\">\n                        <div class=\"movie-card m-1\">\n                            <div class=\"movie-img\">\n                                <a href=\"#\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9i-t0o_ltZf_c5ZQ4F4kbuETdhNDdxsjIYKaofkjTM3BmHTqc\" class=\"img-fluid\"></a>\n                            </div>\n                            <div class=\"movie-title\">\n                                <a href=\"#\">\n                                    <p class=\"text-white text-sm-center font-small flex-center\">Slide 3</p>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"carousel-item\">\n                    <div class=\"col-lg-2\">\n                        <div class=\"movie-card m-1\">\n                            <div class=\"movie-img\">\n                                <a href=\"#\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9i-t0o_ltZf_c5ZQ4F4kbuETdhNDdxsjIYKaofkjTM3BmHTqc\" class=\"img-fluid\"></a>\n                            </div>\n                            <div class=\"movie-title\">\n                                <a href=\"#\">\n                                    <p class=\"text-white text-sm-center font-small flex-center\">Slide 4</p>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"carousel-item\">\n                    <div class=\"col-lg-2\">\n                        <div class=\"movie-card m-1\">\n                            <div class=\"movie-img\">\n                                <a href=\"#\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9i-t0o_ltZf_c5ZQ4F4kbuETdhNDdxsjIYKaofkjTM3BmHTqc\" class=\"img-fluid\"></a>\n                            </div>\n                            <div class=\"movie-title\">\n                                <a href=\"#\">\n                                    <p class=\"text-white text-sm-center font-small flex-center\">Slide 5</p>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"carousel-item\">\n                    <div class=\"col-lg-2\">\n                        <div class=\"movie-card m-1\">\n                            <div class=\"movie-img\">\n                                <a href=\"#\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9i-t0o_ltZf_c5ZQ4F4kbuETdhNDdxsjIYKaofkjTM3BmHTqc\" class=\"img-fluid\"></a>\n                            </div>\n                            <div class=\"movie-title\">\n                                <a href=\"#\">\n                                    <p class=\"text-white text-sm-center font-small flex-center\">Slide 6</p>\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <a class=\"carousel-control-prev bg-dark w-auto\" href=\"#recipeCarousel\" role=\"button\" data-slide=\"prev\">\n                <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n                <span class=\"sr-only\">Previous</span>\n            </a>\n            <a class=\"carousel-control-next bg-dark w-auto\" href=\"#recipeCarousel\" role=\"button\" data-slide=\"next\">\n                <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n                <span class=\"sr-only\">Next</span>\n            </a>\n        </div>\n    </div>\n    <h5 class=\"mt-2\">Advances one slide at a time</h5>\n</div>"
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
 
-      <div class="hero">
-        <div class="box">
-          <h1>
-            Fuel Mind <br />
-            Travel
-          </h1>
-
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Consequatur doloribus inventore amet recusandae
-          </p>
-
-          <button>Let's go Now</button>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="section1">
-        <h2>
-          Start Your Vacation <br />
-          with Lots of Services!
-        </h2>
-        <div class="container">
-          <div class="card">
-            <i class="fa-sharp fa-light fa-ship"></i>
-            <p>Ship Cruises</p>
-            <span>150 properties</span>
-          </div>
-          <div class="card">
-            <i class="fa-regular fa-ship"></i>
-            <p>Ship Cruises</p>
-            <span>150 properties</span>
-          </div>
-          <div class="card">
-            <i class="fa-regular fa-ship"></i>
-            <p>Ship Cruises</p>
-            <span>150 properties</span>
-          </div>
-          <div class="card">
-            <i class="fa-regular fa-ship"></i>
-            <p>Ship Cruises</p>
-            <span>150 properties</span>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script>
-      let navbar = document.querySelector(".navb");
-      document.addEventListener("scroll", function () {
-        //document.scrollingElement.scrollTop
-        console.log(document.scrollingElement.scrollTop);
-        if (document.scrollingElement.scrollTop >= 20) {
-          navbar.classList.replace("navb", "navb2");
-        } else {
-          navbar.classList.replace("navb2", "navb");
-        }
-      });
-    </script>
+      
+    ></script>
   </body>
 </html>
