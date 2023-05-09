@@ -1,133 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-*{
-    margin: auto;
-    
-    font-family: 'Montserrat', sans-serif;
-
+* {
+  box-sizing: border-box;
 }
-
-header{
-    background-image: url(../img/neom-_jfejQo2tZw-unsplash.jpg);
-    background-size: cover;
-    height: 980px;
-    
-    
+body {
+  max-width: 1200px;
+  font-family: "Poppins", sans-serif;
+  margin: 0 auto;
 }
-.logo h1{
-    font-size: 1.5em;
+header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.navb{
-    position: sticky;
-    top: 0;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 30px;
+ul {
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  margin: 0;
 }
-
-.navb2{
-    position: relative;
-    z-index: 1;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
+li a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+}
+li a.active:before {
+  position: absolute;
+  content: "";
+  width: 35%;
+  height: 1px;
+  border-bottom: 2px solid black;
+  bottom: -6px;
 }
 
-ul{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    list-style: none;
+main {
+  gap: 8em;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  width: 50%;
 }
 
-li{
-    margin-right:50px;
-    font-size: 1.3em;
+h1 {
+  margin-bottom: 20px;
+  font-family: "Playfair Display";
+  font-size: 52px;
+}
+.buttons {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttons a {
+  color: black;
+  font-size: 18px;
 }
 
-.hero{
-    color: white;
-    padding-top: 100px;
-    padding-left: 290px;
-    margin: 0;
-    width: 600px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+button {
+  background-color: #f2f0df;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
-.hero h1{
-    font-weight: 700;
-    font-size: 5em;
-    margin-bottom: 10px;
+.social {
+  box-shadow: 2px 2px 15px 5px #ababab;
+  position: relative;
+  padding: 30px 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social h3 {
+  bottom: 18px;
+  right: 20px;
+  position: relative;
+  font-size: 30px;
+  font-weight: 300;
+  padding: 0 40px;
 }
 
-.hero p{
-    line-height: 25px;
-    margin-bottom: 30px;
-    opacity: 70%;
+.right-col {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.3em;
+}
+.left-col {
+  width: 45%;
 }
 
-.hero button{
-    opacity: 70%;
-    width: 150px;
-    height: 50px;
-    color: darkorange;
-    transition: 500ms;
+.left {
+  width: 300px;
+  height: 690px;
+  background-image: url(../images/clothing3.jpg);
+  background-size: cover;
 }
-
-.hero button:hover{
-    scale: 1.1;
-    opacity: 100%;
+.priceTag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.section1{
-    margin-top: 60px;
-    
-}
-.section1 h2{
-    padding-left: 300px;
-    font-weight: 700;
-    font-size: 2.5em;
-}
-.container{
-    margin-top: 70px;
-    padding-right: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.card{
-    margin: 0;
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 250px;
-    border: 1px solid rgba(202, 198, 198, 0.616);
-    text-align: center;
-    transition: 500ms;
-}
-
-.card p{
-    
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.card:hover{
-    box-shadow: 2px 2px 12px 2px  rgba(202, 198, 198, 0.616);
-    scale: 1.1;
+.social img {
+  position: absolute;
+  left: -30px;
+  top: -20px;
 }
