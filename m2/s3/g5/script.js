@@ -52,10 +52,11 @@ let getProduct = function () {
                     <p>${event.description}</p>
                     <p>${event.price}€</p>
                     <a href="backoffice.html?eventId=${event._id}" class="btn btn-primary ms-1">MODIFICA</a>
-                    <a href="details.html?eventId=${event._id}" class="btn btn-primary">SCOPRI DI PIU</a>
+                    <a href="details.html?eventId=${event._id}" class="btn btn-primary" data-toggle="modal" data-target="#examp">SCOPRI DI PIU</a>
                   </div>
                 </div>
               </div>
+              
               `;
 
         rowReference.innerHTML += colTemplate;
@@ -88,7 +89,62 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
 saveButton.addEventListener("click", (e) => {
   e.preventDefault();
 
-  fetch("https://striveschool-api.herokuapp.com/api/product/", {
+  fetch(
+    eventId
+      ? "https://striveschool-api.herokuapp.com/api/product/" + eventId
+      : "https://striveschool-api.herokuapp.com/api/product/",
+    {
+      method: eventId ? "PUT" : "POST",
+      body: JSON.stringify(new Product()),
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVkZTRjNzg4Zjc0MDAwMTQyODc0MzQiLCJpYXQiOjE2ODM4NzUwMTUsImV4cCI6MTY4NTA4NDYxNX0.UhZMEpCcZJmZtlPfSyEdcq34wjasu6-Wo05gDtHuyTA",
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((res) => {
+      location.assign("homepage.html");
+      console.log(res);
+    })
+
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+let addressBarContent = new URLSearchParams(window.location.search);
+
+let eventId = addressBarContent.get("eventId");
+
+deleteButton.addEventListener("click", () => {
+  fetch(
+    eventId
+      ? "https://striveschool-api.herokuapp.com/api/product/" + eventId
+      : "https://striveschool-api.herokuapp.com/api/product/",
+    {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVkZTRjNzg4Zjc0MDAwMTQyODc0MzQiLCJpYXQiOjE2ODM4NzUwMTUsImV4cCI6MTY4NTA4NDYxNX0.UhZMEpCcZJmZtlPfSyEdcq34wjasu6-Wo05gDtHuyTA",
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((res) => {
+      if (res.ok) {
+        alert("eliminazione completata con successo");
+        location.assign("homepage.html");
+      } else {
+        throw new Error("Problema nell'eliminazione dell'evento");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+/* fetch("https://striveschool-api.herokuapp.com/api/product/", {
     method: "POST",
     body: JSON.stringify(new Product()),
     headers: {
@@ -106,60 +162,4 @@ saveButton.addEventListener("click", (e) => {
     .catch((error) => {
       console.log(error);
     });
-});
-
-let addressBarContent = new URLSearchParams(window.location.search);
-
-let eventId = addressBarContent.get("eventId");
-if (eventId) {
-  deleteButton.addEventListener("click", () => {
-    fetch("https://striveschool-api.herokuapp.com/api/product/" + eventId, {
-      method: "DELETE",
-      headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVkZTRjNzg4Zjc0MDAwMTQyODc0MzQiLCJpYXQiOjE2ODM4NzUwMTUsImV4cCI6MTY4NTA4NDYxNX0.UhZMEpCcZJmZtlPfSyEdcq34wjasu6-Wo05gDtHuyTA",
-        "Content-Type": "application/json",
-      },
-      // non c'è body
-      // non c'è quindi content-type
-    })
-      .then((res) => {
-        if (res.ok) {
-          alert("eliminazione completata con successo");
-          location.assign("homepage.html");
-        } else {
-          throw new Error("Problema nell'eliminazione dell'evento");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
-  fetch("https://striveschool-api.herokuapp.com/api/product/" + eventId)
-    // https://striveschool-api.herokuapp.com/api/agenda/645cb817dfde320014cd7a54
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        throw new Error("Errore nel recupero dell'evento");
-      }
-    })
-    .then((event) => {
-      console.log(
-        "DATI DEL SINGOLO EVENTO, RECUPERATO TRAMITE GET SINGOLA",
-        event
-      );
-      // ripopoliamo il form, finalmente
-      document.getElementById("name").value = event.name;
-      document.getElementById("description").value = event.description;
-      document.getElementById("brand").value = event.brand;
-      document.getElementById("price").value = event.price;
-      document.getElementById("image").value = event.image; // trucchetto per ripopolare correttamente un input date
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-} else {
-  // modalità CREAZIONE
-}
+});*/
