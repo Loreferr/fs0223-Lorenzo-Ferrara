@@ -19,16 +19,16 @@
       }
     </style>
   </head>
-  <body class="bg-dark">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark p-0">
       <div class="container-fluid">
-        <a class="navbar-brand fs-3" href="homepage.html"
+        <a class="navbar-brand fs-4 text-light" href="homepage.html"
           ><img
-            style="width: 30px"
+            style="width: 30px; padding: 9px 0"
             src="https://s.w.org/images/core/emoji/14.0.0/svg/1f6cd.svg"
             alt=""
           />
-          Store
+          Torna allo Store
         </a>
         <button
           class="navbar-toggler"
@@ -45,7 +45,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
-                class="nav-link active"
+                class="nav-link active text-light"
                 aria-current="page"
                 href="backoffice.html"
                 >BACKOFFICE</a
@@ -55,10 +55,29 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      <div class="row justify-content-center mt-3">
-        <div class="col-12 col-md-8 text-center">
-          <h2>Backoffice- Nuovo Prodotto</h2>
+    <div class="container text-black">
+      <div
+        class="row justify-content-center mt-3 border border rounded-5 shadow-lg flex-column flex-lg-row"
+      >
+        <div
+          style="
+            background-image: url(https://images2.alphacoders.com/108/thumb-1920-1083636.jpg);
+            background-size: cover;
+          "
+          class="col col-lg-6 d-flex flex-column justify-content-center align-items-center shadow-lg border rounded-5"
+        >
+          <h2 class="fs-3">
+            Crea il tuo <br /><span class="fs-1" style="font-weight: 700"
+              >Nuovo Prodotto</span
+            >
+          </h2>
+          <img
+            style="width: 200px"
+            src="https://cdn.freebiesupply.com/images/large/2x/apple-logo-transparent.png"
+            alt=""
+          />
+        </div>
+        <div class="col col-lg-6 text-center ps-5 pe-5 mb-5">
           <form class="mt-5 text-start" id="event-form">
             <div class="mb-3">
               <label for="name" class="form-label">Nome Prodotto</label>
@@ -88,7 +107,7 @@
                 type="text"
                 class="form-control"
                 id="brand"
-                aria-describedby="pricefield"
+                aria-describedby="brandfield"
                 required
               />
             </div>
@@ -98,7 +117,7 @@
                 type="number"
                 class="form-control"
                 id="price"
-                aria-describedby="timefield"
+                aria-describedby="pricefield"
                 required
               />
             </div>
@@ -108,15 +127,30 @@
                 type="text"
                 class="form-control"
                 id="img"
-                aria-describedby="timefield"
+                aria-describedby="imgfield"
                 required
               />
             </div>
-            <button type="submit" class="btn btn-primary" id="save-button">
+            <button
+              type="submit"
+              class="btn btn-outline-success me-3"
+              id="save-button"
+            >
               CREA PRODOTTO
             </button>
-            <button type="button" class="btn btn-danger" id="delete-button">
+            <button
+              type="button"
+              class="btn btn-outline-danger me-3"
+              id="delete-button"
+            >
               ELIMINA PRODOTTO
+            </button>
+            <button
+              type="submit"
+              class="btn btn-outline-primary"
+              id="reset-button"
+            >
+              Reset
             </button>
           </form>
         </div>
