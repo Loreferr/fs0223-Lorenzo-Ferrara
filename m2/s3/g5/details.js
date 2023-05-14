@@ -7,7 +7,7 @@ const fillDetailsPage = function (event) {
         <div>
         <img src=${event.imageUrl} style="width: 500px"/>
         </div>
-        <div class="border rounded-5 p-3">
+        <div class="p-3">
         <div>
         <h5 class="fs-1">${event.name}</h5>
         <p>${event.brand}</p>
