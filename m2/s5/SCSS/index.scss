@@ -1,0 +1,226 @@
+@import './mixins/mixins';
+i:hover{color: #a29e9e;}
+a{
+    color: white;
+    text-decoration: none;
+}
+body{
+    #searchBar{
+        width: 350px;
+        #searchBarText[placeholder]
+             {
+                color: darkgray;
+              }
+        }
+    
+    nav{
+        
+        #searchForJs{cursor:pointer;}
+    }
+    // aside{
+    //     // height: 781px;
+    // }
+    footer{
+        @media screen and (max-width: 767px){
+            bottom: 45px;
+            border-bottom: 2px solid black !important;
+            border-top: 2px solid black !important;
+        }
+        @media screen and (min-width: 768px){
+            bottom: 0;
+        }
+        height: 100px;
+        
+        #photoFooter{
+            width: 80px;
+            height: 80px;
+        }
+        .baseBar{
+            height: 10px;
+            background-color: grey;
+            border-radius: 20px;
+        }
+        .progressBar{
+            border-radius: 20px;
+            top: 0px;
+            left: 0px;
+            background-color: green;
+            width: 100%;
+            height: 10px;
+            animation-name: transitionBar;
+            animation-duration: 30s;
+            animation-timing-function: linear;
+        }
+        .progressBarMobile{
+            border-radius: 20px;
+            top: 0px;
+            left: 0px;
+            background-color: white;
+            width: 100%;
+            height: 2px;
+            animation-name: transitionBar;
+            animation-duration: 30s;
+            animation-timing-function: linear;
+        }
+        ul.dropdown-menu div{
+            margin: 0 auto !important;
+        }
+        button.dropdown-toggle {
+            color: white !important;
+            border: none !important;
+            background-color: transparent !important;
+        }
+/*         .form-range{
+            margin: auto !important;
+            padding: auto !important;
+        } */
+        .dropdown-toggle::after {
+            display: none !important;
+          }
+          
+    }
+
+    main>div.container-fluid.overflow-y-scroll{
+
+
+         height: 850px;
+
+        @include main-content-page-1;
+        div.row{
+                .my-card{
+                    @include my-card;
+                    img{
+                        height: 90%;
+                    }
+                    h1{
+                        font-size: 3.5rem;
+                    }
+                    .light-grey{
+                        background-color: #2d2d2d;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+        .myPlaylist{
+            background-color: #2d2d2d;
+            border-radius: 5px;
+            box-shadow: 0px 0px 9px -2px #000000;
+        }
+        .card{
+            background-color: #2d2d2d;
+            h6{
+                color: white;
+            }
+            p{
+                color: #858585;
+            }
+        }
+        .card{cursor:pointer;}
+        .card:hover{
+            background-color: #5c5b5b;
+        }
+
+
+    }
+}
+
+.box{
+    margin-bottom: 20px;
+    // width: 200px;
+     height: 200px;
+}
+.box{cursor:pointer;}
+.box{
+    transition: all 0.2s;
+}
+.box:hover{
+    transform: scale(0.9);
+}
+
+.destruction{
+    display: none;
+}
+.bg-custom-artist{
+    background: linear-gradient(0deg, rgba(18,18,18,1) 35%, rgba(32,32,32,1) 67%);
+}
+.bg-img-artist{
+    background-position: center center;
+    background-size: cover;
+}
+.songYouLikeImg{
+    width: 100px;
+}
+#artistName{
+   
+        font-size: 6em;
+    
+}
+
+#albumPage{
+     background: linear-gradient(0deg, rgb(0, 0, 0) 50%, rgba(43,43,43,1) 91%); 
+    background-attachment: local;
+}
+#albumDisplayTitle{
+    font-weight: bold;
+    font-size: 3.5rem;
+    @media screen and (max-width: 767px){
+        margin-top: 20px;
+        font-size: 2rem;
+    }
+}
+#interpolationAlbum{
+    img{
+        width: 30px;
+    }
+}
+.bg-black-trasparent{
+    background-color: #00000021;
+}
+#playButton{
+    font-size: 60px;
+}
+#iContainer i, #singleI{
+    @media screen and (max-width: 767px){
+        font-size: 2rem !important;
+    }
+}
+
+@keyframes transitionBar {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+#containerTextFooterScroll{
+    overflow: hidden;
+}
+
+#songTitleFooter{
+    white-space: nowrap;
+    animation: scroll 5s linear infinite;
+}
+@keyframes scroll{
+    0% {
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.songInsideAlbum:hover{
+    background-color: #3d3c3c;
+}
+
+/* nav{
+    background-color: none !important;
+} */
+/* div.col-12 col-md-3.bg-black{
+    margin-bottom: 100px;
+} */
+/* @media screen and (min-width: 768px) {
+    
+} */
