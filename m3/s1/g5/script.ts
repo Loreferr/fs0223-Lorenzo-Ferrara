@@ -9,11 +9,10 @@ interface ISmartphone {
     getNumeroChiamate():number
     chiamata(min:number):void
     azzeraChiamate():void
-    mostraRegistroChiamate():void
-    filtraChiamatePerDataOra():void
+    
 }
 
-class registroChiamate {
+class RegistroChiamate {
     id:number
     durata:number
     dataEOra:Date
@@ -27,7 +26,7 @@ class Smartphone implements ISmartphone{
     carica:number
     numeroChiamate:number
     costoMinuto:number
-    registroChiamate:registroChiamate[]
+    registroChiamate:RegistroChiamate[]
 
     constructor(carica:number, numeroChiamate:number, costoMinuto:number,){
         this.carica = carica;
@@ -53,7 +52,7 @@ class Smartphone implements ISmartphone{
     }
     chiamata(min:number):void{
         this.carica = this.carica - min*this.costoMinuto;
-        this.registroChiamate.push(new registroChiamate(this.registroChiamate.length,min,new Date()))
+        this.registroChiamate.push(new RegistroChiamate(this.registroChiamate.length+1,min,new Date()))
         ;
         
 
@@ -66,7 +65,9 @@ class Smartphone implements ISmartphone{
     mostraRegistroChiamate():void{
         console.log(this.registroChiamate);
     }
-    filtraChiamatePerDataOra():void{
+    filtraChiamatePerDataOra(date:Date):RegistroChiamate[]{
+        
+       return this.registroChiamate.filter(calls => calls.dataEOra.toLocaleDateString('it-IT') == date.toLocaleDateString('it-IT'));
         
     }
 
@@ -92,8 +93,14 @@ console.log(thirdUser.ricarica(10));
 console.log(thirdUser.numero404());
 console.log(thirdUser.getNumeroChiamate());
 console.log(thirdUser.chiamata(7));
+console.log(thirdUser.chiamata(7));
+console.log(thirdUser.chiamata(7));
 console.log(thirdUser.numero404());
 console.log(thirdUser.mostraRegistroChiamate());
+
+
+console.log(thirdUser.filtraChiamatePerDataOra(new Date('2023-5-26')));
+
 
 
 

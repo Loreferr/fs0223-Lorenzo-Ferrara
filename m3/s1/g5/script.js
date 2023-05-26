@@ -1,10 +1,10 @@
-var registroChiamate = /** @class */ (function () {
-    function registroChiamate(id, durata, dataEOra) {
+var RegistroChiamate = /** @class */ (function () {
+    function RegistroChiamate(id, durata, dataEOra) {
         this.id = id;
         this.durata = durata;
         this.dataEOra = dataEOra;
     }
-    return registroChiamate;
+    return RegistroChiamate;
 }());
 var Smartphone = /** @class */ (function () {
     function Smartphone(carica, numeroChiamate, costoMinuto) {
@@ -24,7 +24,7 @@ var Smartphone = /** @class */ (function () {
     };
     Smartphone.prototype.chiamata = function (min) {
         this.carica = this.carica - min * this.costoMinuto;
-        this.registroChiamate.push(new registroChiamate(this.registroChiamate.length, min, new Date()));
+        this.registroChiamate.push(new RegistroChiamate(this.registroChiamate.length + 1, min, new Date()));
     };
     Smartphone.prototype.azzeraChiamate = function () {
         this.numeroChiamate = 0;
@@ -32,7 +32,8 @@ var Smartphone = /** @class */ (function () {
     Smartphone.prototype.mostraRegistroChiamate = function () {
         console.log(this.registroChiamate);
     };
-    Smartphone.prototype.filtraChiamatePerDataOra = function () {
+    Smartphone.prototype.filtraChiamatePerDataOra = function (date) {
+        return this.registroChiamate.filter(function (calls) { return calls.dataEOra.toLocaleDateString('it-IT') == date.toLocaleDateString('it-IT'); });
     };
     return Smartphone;
 }());
@@ -53,5 +54,8 @@ console.log(thirdUser.ricarica(10));
 console.log(thirdUser.numero404());
 console.log(thirdUser.getNumeroChiamate());
 console.log(thirdUser.chiamata(7));
+console.log(thirdUser.chiamata(7));
+console.log(thirdUser.chiamata(7));
 console.log(thirdUser.numero404());
 console.log(thirdUser.mostraRegistroChiamate());
+console.log(thirdUser.filtraChiamatePerDataOra(new Date('2023-5-26')));
