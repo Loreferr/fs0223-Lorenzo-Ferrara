@@ -24,12 +24,10 @@ var Smartphone = /** @class */ (function () {
     };
     Smartphone.prototype.chiamata = function (min) {
         this.carica = this.carica - min * this.costoMinuto;
-        this.registroChiamate.push(new registroChiamate(1, min, new Date()));
-        this.registroChiamate.forEach(function (element) {
-        });
+        this.registroChiamate.push(new registroChiamate(this.registroChiamate.length, min, new Date()));
     };
     Smartphone.prototype.azzeraChiamate = function () {
-        this.chiamata(0);
+        this.numeroChiamate = 0;
     };
     Smartphone.prototype.mostraRegistroChiamate = function () {
         console.log(this.registroChiamate);
@@ -56,3 +54,4 @@ console.log(thirdUser.numero404());
 console.log(thirdUser.getNumeroChiamate());
 console.log(thirdUser.chiamata(7));
 console.log(thirdUser.numero404());
+console.log(thirdUser.mostraRegistroChiamate());
