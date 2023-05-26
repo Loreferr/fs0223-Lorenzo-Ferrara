@@ -53,10 +53,8 @@ class Smartphone implements ISmartphone{
     }
     chiamata(min:number):void{
         this.carica = this.carica - min*this.costoMinuto;
-        this.registroChiamate.push(new registroChiamate(1,min,new Date()))
-        this.registroChiamate.forEach(element => {
-            
-        });
+        this.registroChiamate.push(new registroChiamate(this.registroChiamate.length,min,new Date()))
+        ;
         
 
     }
@@ -95,6 +93,9 @@ console.log(thirdUser.numero404());
 console.log(thirdUser.getNumeroChiamate());
 console.log(thirdUser.chiamata(7));
 console.log(thirdUser.numero404());
+console.log(thirdUser.mostraRegistroChiamate());
+
+
 
 
 
