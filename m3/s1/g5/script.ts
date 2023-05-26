@@ -61,7 +61,7 @@ class Smartphone implements ISmartphone{
 
     }
     azzeraChiamate():void{
-        this.chiamata(0)
+        this.numeroChiamate = 0
 
     }
 
