@@ -1,11 +1,13 @@
-<div class="row">
-  <div *ngFor="let post of postArrayF" class="card">
-    <h5 class="card-header">{{ post.id }}</h5>
-    <div class="card-body">
-      <h5 class="card-title">{{ post.title }}</h5>
-      <p class="card-text">
-        {{ post.body }}
-      </p>
+<div class="row justify-content-center align-item-center">
+  <div class="col-4">
+    <div *ngFor="let post of postArrayF" class="card">
+      <h5 class="card-header">Post {{ post.id }}</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">
+          {{ post.body }}
+        </p>
+      </div>
     </div>
   </div>
 </div>
