@@ -5,12 +5,12 @@ import { Post } from './Model/post';
   providedIn: 'root'
 })
 export class PostsService {
-  apiUrl:string = './assets/db.json';
+  apiUrl:string = 'assets/db.json';
 
 
   constructor() { }
 
-  getAllPosts():Promise<Post[]>{
-    return fetch(this.apiUrl).then(res => res.json())
+  getAllPosts():Promise<Post[]> {
+   return fetch(this.apiUrl).then(res => res.json());
   }
 }
