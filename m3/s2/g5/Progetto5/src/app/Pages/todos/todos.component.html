@@ -1,8 +1,16 @@
 <div class="container">
-  <h3>Aggiungi Task</h3>
-
-  <input [(ngModel)]="Todo.title" placeholder="Add" type="text" name="Title" />
-  <button (click)="AddTodos()" class="button">+</button>
+  <div class="inputfield">
+    <h3>Todo List App</h3>
+    <input
+      [(ngModel)]="Todo.title"
+      placeholder="Add Todo"
+      type="text"
+      name="Title"
+    />
+    <button (click)="AddTodos()" class="button">
+      <i class="bi bi-plus-lg"></i>
+    </button>
+  </div>
   <div class="loading" *ngIf="loading">Loading...</div>
   <div class="noTodo" *ngIf="TodoFiltered.length == 0 && !loading">
     Non ci sono pizze
@@ -10,7 +18,9 @@
   <ul>
     <li *ngFor="let goal of TodoFiltered">
       {{ goal.title }}
-      <button (click)="updateTodos(goal)">✓</button>
+      <button (click)="updateTodos(goal)">
+        <i class="bi bi-check-lg"></i>
+      </button>
     </li>
   </ul>
 </div>

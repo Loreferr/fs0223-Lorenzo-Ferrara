@@ -7,13 +7,18 @@
     },
     {
       "title": "Fare la Spesa",
-      "completed": false,
+      "completed": true,
       "id": 31
     },
     {
-      "title": "Ordinare Pizza",
-      "completed": true,
+      "title": "Pulizia di Casa",
+      "completed": false,
       "id": 32
+    },
+    {
+      "title": "Andare al Mare",
+      "completed": false,
+      "id": 33
     }
   ]
 }
