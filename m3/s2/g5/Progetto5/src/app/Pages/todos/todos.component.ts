@@ -32,7 +32,7 @@ export class TodosComponent {
 
   }
 
-  AddTodos(){
+  AddTodos() {
     this.TodosSvc.addTodos(this.Todo)
     setTimeout(() => {
       this.getTodos()
