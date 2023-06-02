@@ -15,26 +15,28 @@
     text-align: center;
     position: relative;
     top: 20px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 2.5em;
     color: #E69E18;
   }
   input{
-
+    position: relative;
     border: 0;
-    width: 450px;
+    width: 430px;
     height: 50px;
   }
   .button{
     background-color: #E69E18;
-    right: -5px;
-    top: 68px;
+    right: 5px;
+    top: 85px;
     position: absolute;
-    height: 80px;
-    width: 80px;
-    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
     border: 0;
+    border: black 2px solid;
     cursor: pointer;
+    transition: 200ms ease-in-out;
     i{
       font-size: 2.5em;
       font-weight: bold;
@@ -45,6 +47,10 @@
   input::placeholder{
     padding-left: 10px;
     font-size: 1.5em;
+  }
+
+  .button:hover{
+    transform: scale(1.2);
   }
 
 
@@ -80,9 +86,16 @@ ul{
     width: 60px;
     border-radius:30px ;
     height: 60px;
+    border: black 2px solid;
     font-size: 0.5em;
     background-color: rgb(95, 199, 95);
+    transition: 200ms ease-in-out;
   }
+
+  button:hover{
+    transform: scale(1.2);
+  }
+
 
   li{
     border-left: 4px solid #E69E18;
