@@ -9,6 +9,11 @@
       "title": "Fare la Spesa",
       "completed": false,
       "id": 31
+    },
+    {
+      "title": "Ordinare Pizza",
+      "completed": true,
+      "id": 32
     }
   ]
 }
