@@ -1,0 +1,16 @@
+<div class="container">
+  <h3>Aggiungi Task</h3>
+
+  <input [(ngModel)]="Todo.title" placeholder="Add" type="text" name="Title" />
+  <button (click)="AddTodos()" class="button">+</button>
+  <div class="loading" *ngIf="loading">Loading...</div>
+  <div class="noTodo" *ngIf="TodoFiltered.length == 0 && !loading">
+    Non ci sono pizze
+  </div>
+  <ul>
+    <li *ngFor="let goal of TodoFiltered">
+      {{ goal.title }}
+      <button (click)="updateTodos(goal)">✓</button>
+    </li>
+  </ul>
+</div>

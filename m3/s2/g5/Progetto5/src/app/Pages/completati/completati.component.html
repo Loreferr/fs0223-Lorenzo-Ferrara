@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Task Completate</h3>
+
+  <div class="loading" *ngIf="loading">Loading...</div>
+  <div *ngIf="TodoFilteredTrue.length == 0 && !loading">Non ci sono pizze</div>
+  <ul>
+    <li *ngFor="let goal of TodoFilteredTrue">
+      {{ goal.title }}
+      <button (click)="Deleteto(goal)">X</button>
+    </li>
+  </ul>
+</div>
