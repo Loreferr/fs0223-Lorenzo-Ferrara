@@ -1,6 +1,9 @@
 <div class="container">
   <div class="inputfield">
-    <h3>Todo List App</h3>
+    <div class="routing">
+      <h3 class="underline" [routerLink]="['/']">Todo</h3>
+      <h3 class="underline" [routerLink]="['/Completati']">Done</h3>
+    </div>
     <input
       [(ngModel)]="Todo.title"
       placeholder="Add Todo"

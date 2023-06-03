@@ -1,9 +1,13 @@
 .container{
   padding: 0 20px;
-  margin: 0 auto;
+  margin: 150px auto;
   width: 500px;
+  border: 0;
+  border-radius: 5%;
+  background-color: white;
+  box-shadow: 2px 2px 12px 0px rgba(194, 186, 186, 0.9);
 
-  background-color: #F0F0F0;
+
 
   top: 100px;
 
@@ -11,16 +15,25 @@
 
     position: relative;
   }
+  h3:hover{
+    color: #E69E18;
+  }
   h3{
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(45deg, #553c9a, #ee4b2b);
+    cursor: pointer;
     text-align: center;
     position: relative;
     top: 20px;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 2.5em;
-    color: #E69E18;
+
   }
   input{
+    box-shadow: 2px 2px 8px 0px rgba(194, 186, 186, 0.9);
     position: relative;
+    border-radius: 20px;
     border: 0;
     width: 430px;
     height: 50px;
@@ -28,13 +41,13 @@
   .button{
     background-color: #E69E18;
     right: 5px;
-    top: 85px;
+    top: 155px;
     position: absolute;
     height: 60px;
     width: 60px;
     border-radius: 30px;
     border: 0;
-    border: black 2px solid;
+    border:rgba(194, 186, 186, 0.9) 2px solid;
     cursor: pointer;
     transition: 200ms ease-in-out;
     i{
@@ -55,6 +68,7 @@
 
 
   .loading{
+    text-align: center;
     top: 40px;
     position: relative;
     font-size: 2em;
@@ -86,7 +100,7 @@ ul{
     width: 60px;
     border-radius:30px ;
     height: 60px;
-    border: black 2px solid;
+    border:rgba(194, 186, 186, 0.9) 2px solid;
     font-size: 0.5em;
     background-color: rgb(95, 199, 95);
     transition: 200ms ease-in-out;
@@ -98,6 +112,9 @@ ul{
 
 
   li{
+    box-shadow: 2px 2px 8px 0px rgba(194, 186, 186, 0.9);
+    border-radius: 20px;
+
     border-left: 4px solid #E69E18;
     border-right: 4px solid #E69E18;
     margin-top: 30px;
@@ -115,4 +132,31 @@ ul{
 
   }
 
+}
+.routing{
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  align-items: center;
+}
+
+.underline::before{
+  content: '';
+  position: absolute;
+  top: 48px;
+  right: 0;
+  /*left: 0;*/
+  width: 0;
+  height: 2px;
+  background-color: black;
+  background-image: linear-gradient(to right, #553c9a, #ee4b2b);
+  transition: 0.50s ease-out;
+
+
+}
+.underline:hover::before{
+  width: 100%;
+  left: 0;
+  right: auto;
 }

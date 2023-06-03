@@ -1,5 +1,8 @@
 <div class="container">
-  <h3>Task Completate</h3>
+  <div class="routing">
+    <h3 class="underline" [routerLink]="['/']">Todo</h3>
+    <h3 class="underline" [routerLink]="['/Completati']">Done</h3>
+  </div>
 
   <div class="loading" *ngIf="loading">Loading...</div>
   <div *ngIf="TodoFilteredTrue.length == 0 && !loading">Non ci sono pizze</div>

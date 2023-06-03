@@ -2,10 +2,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
+  @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Karla&display=swap');
+
+
  *{
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  body{
+    background-color: #EFEDF5;
+
+  }
 
  }
 
  @import "~bootstrap-icons/font/bootstrap-icons.css"
+
+
+

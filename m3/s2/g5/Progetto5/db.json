@@ -17,8 +17,13 @@
     },
     {
       "title": "Andare al Mare",
-      "completed": false,
+      "completed": true,
       "id": 33
+    },
+    {
+      "title": "Regalo",
+      "completed": false,
+      "id": 34
     }
   ]
 }
