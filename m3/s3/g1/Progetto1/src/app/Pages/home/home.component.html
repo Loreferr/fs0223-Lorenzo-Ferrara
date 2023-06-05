@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <p>Liked: {{ LikeArray.length }}</p>
+    <div *ngFor="let card of cardArr" class="col-3">
+      <div class="card">
+        <img src="{{ card.thumbnailUrl }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <button
+            (click)="pushLike(card)"
+            type="button"
+            class="btn btn-success me-2"
+          >
+            Like
+          </button>
+          <button
+            (click)="deleteCard(card)"
+            type="button"
+            class="btn btn-danger"
+          >
+            Elimina
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
