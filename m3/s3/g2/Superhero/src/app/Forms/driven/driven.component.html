@@ -1,0 +1,173 @@
+<div class="container">
+  <h1>Creazione Supereroi</h1>
+
+  <!-- Form per il Supereroe 1 -->
+  <form #heroForm1="ngForm" (ngSubmit)="submitForm(heroForm1)">
+    <h2>Supereroe 1</h2>
+
+    <div class="form-group">
+      <label for="name1">Nome:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name1"
+        name="name1"
+        required
+        [(ngModel)]="hero1.name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo1">Alter Ego:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="alterEgo1"
+        name="alterEgo1"
+        required
+        [(ngModel)]="hero1.alterEgo"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="power1">Potere:</label>
+      <select
+        class="form-control"
+        id="power1"
+        name="power1"
+        required
+        [(ngModel)]="hero1.power"
+      >
+        <option value="">Seleziona un potere</option>
+        <option value="Super Forza">Super Forza</option>
+        <option value="Invisibilità">Invisibilità</option>
+        <option value="Velocità">Velocità</option>
+        <option value="Telecinesi">Telecinesi</option>
+        <option value="superTiro">SuperTiro</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="enemy1">Nemico (max 10 caratteri):</label>
+      <input
+        type="text"
+        class="form-control"
+        id="enemy1"
+        name="enemy1"
+        maxlength="10"
+        [(ngModel)]="hero1.enemy"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="planet1">Pianeta (minimo 5 caratteri):</label>
+      <input
+        type="text"
+        class="form-control"
+        id="planet1"
+        name="planet1"
+        required
+        minlength="5"
+        [(ngModel)]="hero1.planet"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="weakness1">Debolezza:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="weakness1"
+        name="weakness1"
+        [(ngModel)]="hero1.weakness"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crea Supereroe 1</button>
+  </form>
+
+  <!-- Form per il Supereroe 2 -->
+  <form #heroForm2="ngForm" (ngSubmit)="submitForm(heroForm2)">
+    <h2>Supereroe 2</h2>
+
+    <div class="form-group">
+      <label for="name2">Nome:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name2"
+        name="name2"
+        required
+        [(ngModel)]="hero2.name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo2">Alter Ego:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="alterEgo2"
+        name="alterEgo2"
+        required
+        [(ngModel)]="hero2.alterEgo"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="power2">Potere:</label>
+      <select
+        class="form-control"
+        id="power2"
+        name="power2"
+        required
+        [(ngModel)]="hero2.power"
+      >
+        <option value="">Seleziona un potere</option>
+        <option value="Super Forza">Super Forza</option>
+        <option value="Invisibilità">Invisibilità</option>
+        <option value="Velocità">Velocità</option>
+        <option value="Telecinesi">Telecinesi</option>
+        <option value="superTiro">SuperTiro</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="enemy2">Nemico (max 10 caratteri):</label>
+      <input
+        type="text"
+        class="form-control"
+        id="enemy2"
+        name="enemy2"
+        maxlength="10"
+        [(ngModel)]="hero2.enemy"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="planet2">Pianeta (minimo 5 caratteri):</label>
+      <input
+        type="text"
+        class="form-control"
+        id="planet2"
+        name="planet2"
+        required
+        minlength="5"
+        [(ngModel)]="hero2.planet"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="weakness2">Debolezza:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="weakness2"
+        name="weakness2"
+        [(ngModel)]="hero2.weakness"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crea Supereroe 2</button>
+  </form>
+</div>
