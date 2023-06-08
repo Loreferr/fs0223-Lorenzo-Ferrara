@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center text-center">
+    <div class="col-6">
+      <a [routerLink]="['/auth', 'login']" class="btn btn-primary">Accedi</a>
+      <br />
+    </div>
+    <div class="col-6">
+      <a [routerLink]="['/auth', 'register']" class="btn btn-primary"
+        >Registrati</a
+      >
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
