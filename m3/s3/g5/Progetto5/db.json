@@ -1,3 +1,11 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "elmonstro@hotmail.it",
+      "password": "$2a$10$Gi9.oz/OL9sDtTuaVV7jnempbasqv1.1/9laJMv4f5ShjCa3h.onm",
+      "name": "Diego",
+      "surname": "Maradona",
+      "id": 2
+    }
+  ]
 }
