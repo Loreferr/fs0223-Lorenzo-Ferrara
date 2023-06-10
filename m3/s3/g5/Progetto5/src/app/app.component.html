@@ -1,16 +1,4 @@
-<div class="container bg-body-tertiary">
-  <div class="row text-center">
-    <div class="col">
-      <a class="btn btn-primary" [routerLink]="['/auth', 'login']">Accedi</a>
-    </div>
-    <div class="col">
-      <a class="btn btn-primary" [routerLink]="['']">Back</a>
-    </div>
-    <div class="col">
-      <a class="btn btn-primary" [routerLink]="['/auth', 'register']"
-        >Registrati</a
-      >
-    </div>
-  </div>
+<div class="container-fluid m-o">
+  <app-header></app-header>
   <router-outlet></router-outlet>
 </div>

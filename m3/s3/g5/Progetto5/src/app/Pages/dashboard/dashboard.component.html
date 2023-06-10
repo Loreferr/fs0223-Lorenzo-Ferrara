@@ -1,4 +1,4 @@
-<table class="table table-striped m-auto mt-5">
+<table class="table table-striped m-auto pt-5">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -15,8 +15,12 @@
       </td>
       <td>{{ user.email }}</td>
       <td>
-        <a (click)="changeMail(user.email)" class="btn btn-primary">Change</a>
-        <a (click)="deleteUser(user)" class="btn btn-danger">Delete</a>
+        <a (click)="changeMail(user.email)" class="btn btn-outline-primary"
+          >Change</a
+        >
+        <a (click)="deleteUser(user)" class="btn btn-outline-danger ms-3"
+          >Delete</a
+        >
       </td>
     </tr>
   </tbody>

@@ -6,6 +6,20 @@
       "name": "Diego",
       "surname": "Maradona",
       "id": 2
+    },
+    {
+      "email": "lionelmessi@gmail.com",
+      "password": "$2a$10$oKfu9PqkkFnW6ogZ5ZfI6ew759HETQ7BjOL79UzgMsjPRUtepSYye",
+      "name": "Lionel",
+      "surname": "Messi",
+      "id": 3
+    },
+    {
+      "email": "cristianoronaldo@live.it",
+      "password": "$2a$10$SVjME9/NMQ0pXTPOuhz9XeBHr/86ftm2pmc.yq4L7PMphs8m5k.rS",
+      "name": "Cristiano",
+      "surname": "Ronaldo",
+      "id": 4
     }
   ]
 }
