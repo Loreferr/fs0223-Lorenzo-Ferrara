@@ -1,14 +1,73 @@
-.form-signin {
-  max-width: 500px;
-  padding: 1rem;
-  border: 1px solid rgb(173, 170, 170);
-  border-radius: 30px;
-  position: relative;
-  top: 100px;
-  box-shadow: 1px 1px 10px 0px #a09e9e;
+*{
+  font-family: 'PT Sans', sans-serif;
+}
+
+form{
+  width: 500px;
+  padding: 3rem;
+
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+
+  box-shadow: 1px 1px 10px 0px #d1cdcd;
+  h1{
+    font-weight: bold;
+    text-align: center;
+    font-size: 4em;
+  }
+  button{
+    height: 40px;
+    border-radius: 30px;
+  }
+  input{
+    border-radius: 20px;
+  }
+  a{
+    text-decoration: none;
+  }
+
+
 
 
 }
+
+
+.wrapper{
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.rightside{
+  background-image: url(https://images.nightcafe.studio/jobs/ZF8w5zPwQ4Xsi8CO3SvF/ZF8w5zPwQ4Xsi8CO3SvF--1--8ab7q_4x.jpg?tr=w-1600,c-at_max);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  width: 500px;
+  box-shadow: 1px 1px 10px 0px #d1cdcd;
+  p{
+    font-size: 0.7em;
+
+  }
+  img{
+    color: white;
+  }
+
+  .position-relative{
+    position: absolute;
+    top: 433px;
+    left: 40px;
+    h3{
+
+      font-weight: bold;
+    }
+  }
+
+}
+
 
 
 
