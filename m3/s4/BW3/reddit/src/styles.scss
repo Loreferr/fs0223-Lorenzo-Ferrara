@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%; }
+html, body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; height: 100%}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5d5d5daa;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+   display: none;
+}
+
+.darkMode {
+  .mat-toolbar {
+    background-color: rgb(50, 44, 53);
+  }
+  .mat-drawer-container {
+    // background: linear-gradient(180deg, rgba(9,71,106,1) 1%, rgba(14,66,96,1) 2%, rgba(0,0,0,1) 86%);
+    background-color: #000000d8;
+    color: #fff;
+    height: 100vh;
+  }
+  mat-drawer{
+    box-shadow: 1px 1px 2px;
+    // background: linear-gradient(180deg, rgba(9,71,106,1) 1%, rgba(14,66,96,1) 2%, rgba(0,0,0,1) 86%);
+    background-color: #1a1a1a;
+  }
+  .buttonSide {
+    // background-color: rgb(50, 44, 53);
+    background-color: #000000d8;
+    color: #fff;
+  }
+  mat-card {
+    // background-color: rgb(50, 44, 53);
+    background-color: #1a1a1a;
+    mat-card-subtitle{
+      color: rgb(149, 149, 149);
+    }
+  }
+  .liked, .save {
+    color: #fff;
+  }
+  .commentForm{
+    background-color: rgb(67, 67, 67);
+    .commentText{
+      border: 2px solid white !important;
+    }
+  }
+  .formContainer{
+    background-color: rgb(50, 44, 53);
+    .newPostForm{
+      background-color: rgb(67, 67, 67);
+      .createBtn{
+        background: #f44a3e;
+      }
+    }
+  }
+  .commentBtn{
+    color: white;
+    background-color: #f44a3e !important;
+  }
+  .comment-section{
+    .commentCard{
+      border: 2px solid rgb(135, 134, 134);
+      border-radius: 10px;
+      background-color: rgb(67, 67, 67);
+    }
+  }
+}
+
