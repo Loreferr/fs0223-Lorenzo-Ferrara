@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -12,6 +12,8 @@ export class FormComponent {
   age: number = 0
   budget: number = 0
   destination: string = ''
+
+  @ViewChild('formRef') formRef: any;
   constructor(private router: Router){}
 
   onFormSubmit() {
@@ -33,6 +35,7 @@ export class FormComponent {
 
 
     this.router.navigate(['results'], { queryParams: { destination: this.destination } });
+    this.formRef.resetForm()
   }
 
 

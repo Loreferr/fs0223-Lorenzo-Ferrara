@@ -1,12 +1,16 @@
-<div class="background"></div>
-<div class="hero position-absolute text-center">
-  <h1 class="text-center text-light">Discover Your Next Journey</h1>
-  <p class="text-center text-light">
-    let us suggest your next destination based on your personality. <br />
-    Review your best trips
-  </p>
-  <button>Explore Reviews</button>
+<div class="background" [style.backgroundImage]="randomBackgroundImage"></div>
+<div class="row justify-content-between hero position-absolute text-center">
+  <div class="col">
+    <h1 class="text-center text-light">Discover Your Next Journey</h1>
+    <p class="text-center text-light">
+      let us suggest your next destination based on your personality. <br />
+      Review your best trips
+    </p>
+    <button>Explore Reviews</button>
+  </div>
+  <div class="col-4">
+    <h2 class="text-light">Find Your Perfect Place</h2>
+    <app-form></app-form>
+  </div>
 </div>
-<h2>Find Your Next Destination</h2>
-<app-form></app-form>
 <app-header></app-header>
