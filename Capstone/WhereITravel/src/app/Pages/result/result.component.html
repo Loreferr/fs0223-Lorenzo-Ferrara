@@ -1,0 +1,9 @@
+<h2>{{ destination }}</h2>
+
+<h3>Recensioni:</h3>
+<div *ngFor="let review of reviews">
+  <p>
+    <strong>{{ review.author }}</strong
+    >: {{ review.comment }}
+  </p>
+</div>

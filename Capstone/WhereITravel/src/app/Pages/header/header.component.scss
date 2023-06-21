@@ -1,5 +1,59 @@
+
+
+
+
 ul{
+
   list-style: none;
   gap: 2em;
   font-size: 1.2em;
+
 }
+*{
+  font-family: 'montserrat';
+
+}
+header{
+  position: absolute;
+top: 5%;
+left: 50%;
+
+transform: translate(-50%, -50%);
+
+}
+
+a{
+
+  color: white;
+  opacity: 70%;
+}
+
+a:hover{
+  opacity: 100%;
+  color: white;
+}
+
+button{
+  font-size: 1.2em;
+  opacity: 70%;
+  border-radius: 30px;
+  height: 50px;
+  width: 120px;
+  border: 0;
+  background-color: transparent;
+  color: white;
+  transition: 300ms;
+}
+
+button:hover{
+  background-color: white;
+  color: black;
+  opacity: 100%;
+  box-shadow:0px 0px 12px 5px rgba(214, 210, 210, 0.4) ;
+}
+
+
+
+
+
+

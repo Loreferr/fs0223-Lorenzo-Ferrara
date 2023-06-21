@@ -1,0 +1,47 @@
+<form (ngSubmit)="onFormSubmit()">
+  <div class="mb-3">
+    <label for="personality" class="form-label">Personalità</label>
+    <select
+      class="form-select"
+      id="personality"
+      name="personality"
+      [(ngModel)]="personality"
+      required
+    >
+      <option value="" disabled selected>Seleziona la personalità</option>
+      <option value="avventuroso">Avventuroso</option>
+      <option value="cultura">Interessato alla cultura</option>
+      <option value="rilassante">Rilassante</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="age" class="form-label">Età</label>
+    <input
+      type="number"
+      class="form-control"
+      id="age"
+      name="age"
+      [(ngModel)]="age"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="budget" class="form-label">Budget massimo (in Euro)</label>
+    <input
+      type="number"
+      class="form-control"
+      id="budget"
+      name="budget"
+      [(ngModel)]="budget"
+      required
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Invia</button>
+</form>
+
+<div *ngIf="destination">
+  La meta turistica consigliata per te è: {{ destination }}
+</div>
