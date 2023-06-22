@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
+
+
   backgroundImages: string[] = [
 
     'url(../../../../../assets/img/timur-garifov-DdIDRN3Fw2A-unsplash.jpg)',
@@ -25,5 +27,6 @@ export class HomepageComponent {
     const randomIndex = Math.floor(Math.random() * this.backgroundImages.length);
     return this.backgroundImages[randomIndex];
   }
+
 }
 
