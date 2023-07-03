@@ -10,6 +10,7 @@ import { HeaderComponent } from './Pages/header/header.component';
 import { FormComponent } from './Pages/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './Pages/result/result.component';
+import { ReviewsComponent } from './Pages/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ResultComponent } from './Pages/result/result.component';
     HomepageComponent,
     HeaderComponent,
     FormComponent,
-    ResultComponent
+    ResultComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
