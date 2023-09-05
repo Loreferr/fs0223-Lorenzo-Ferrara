@@ -1,24 +1,25 @@
-<div class="background" [style.backgroundImage]="randomBackgroundImage">
+<div
+  *ngFor="let imageUrl of backgroundImages"
+  class="background"
+  [style.backgroundImage]="'url(' + imageUrl + ')'"
+>
+  <!-- Il resto del tuo contenuto -->
   <div class="background-overlay">
-    <div class="content">
-      <app-header></app-header>
-
+    <app-header></app-header>
+    <div class="container">
       <div
-        class="row justify-content-between hero position-absolute text-center"
+        class="row hero align-items-center justify-content-center text-center"
       >
-        <div class="col">
-          <h1 class="text-center text-light">Discover Your Next Journey</h1>
-          <p class="text-center text-light">
-            let us suggest your next destination based on your personality.
-            <br />
-            Review your best trips
-          </p>
-          <button>Explore Reviews</button>
-        </div>
-        <div class="col-4">
-          <app-form></app-form>
-        </div>
+        <h1 class="text-light">Discover Your Next Journey</h1>
+        <p class="text-light text-center">
+          let us suggest your next destination based on your personality.
+          <br />
+          Review your best trips
+        </p>
+        <button [routerLink]="['/reviews']">Explore Reviews</button>
       </div>
     </div>
   </div>
 </div>
+
+<app-form></app-form>

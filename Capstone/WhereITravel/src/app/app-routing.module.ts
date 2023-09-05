@@ -6,7 +6,8 @@ import { ResultComponent } from './Pages/result/result.component';
 import { ReviewsComponent } from './Pages/reviews/reviews.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent},
+  { path: 'homepage', component: HomepageComponent},
+  { path: '', pathMatch:'full' ,redirectTo: 'homepage'},
   { path: 'results', component: ResultComponent},
   {
     path:  'reviews', component: ReviewsComponent

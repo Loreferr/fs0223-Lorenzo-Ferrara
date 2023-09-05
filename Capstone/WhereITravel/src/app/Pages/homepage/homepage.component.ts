@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef } from '@angular/core';
+import { ImageData } from '../../Interfaces/image-data'; // Use correct relative path
+
+
 
 @Component({
   selector: 'app-homepage',
@@ -8,25 +12,28 @@ import { Component, ElementRef } from '@angular/core';
 export class HomepageComponent {
 
 
-  backgroundImages: string[] = [
 
-    'url(../../../../../assets/img/timur-garifov-DdIDRN3Fw2A-unsplash.jpg)',
-    'url(../../../../../assets/img/willian-justen-de-vasconcellos-4hMET7vYTAQ-unsplash.jpg)',
-    'url(../../../../../assets/img/luca-bravo-TaCk3NspYe0-unsplash.jpg)',
-    'url(../../../../../assets/img/chris-czermak-7ybKmhDTcz0-unsplash.jpg)',
-    'url(../../../../../assets/img/leonard-cotte-R5scocnOOdM-unsplash.jpg)',
-    // Aggiungi gli URL delle immagini aggiuntive
-  ];
-  randomBackgroundImage: string = '';
+
+  backgroundImages: string[] = [];
+
+
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.randomBackgroundImage = this.getRandomBackgroundImage();
-  }
+    const apiKey = 'WWhWpB_gDB34rU2Nzj2XJKLoaGrSCgfIfqeCSsjIjgs';
+    const apiUrl = `https://api.unsplash.com/photos/random?count=1&client_id=${apiKey}&query=travel&orientation=landscape&width=2500`;
 
-  getRandomBackgroundImage(): string {
-    const randomIndex = Math.floor(Math.random() * this.backgroundImages.length);
-    return this.backgroundImages[randomIndex];
-  }
+    this.http.get<ImageData[]>(apiUrl) // Usiamo il tipo ImageData[]
+      .subscribe((data: ImageData[]) => { // Tipo corretto per i dati
+        // Estrai gli URL delle immagini e assegnali a backgroundImages
+        this.backgroundImages = data.map(image => image.urls.regular);
+      });
 
-}
+
+
+
+
+
+}}
 
