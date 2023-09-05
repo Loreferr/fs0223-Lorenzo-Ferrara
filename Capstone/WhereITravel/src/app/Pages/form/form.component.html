@@ -1,56 +1,44 @@
-<div class="container bg-white border-0 rounded-5 py-5 shadow-lg">
-  <h2 class="mb-3">Find Your Perfect Place</h2>
+<div
+  class="container m-0 bg-white border-0 rounded-5 py-5 shadow-lg form-ground"
+>
+  <h2 class="mb-4 text-center">Find Your Perfect Place</h2>
   <div class="row justify-content-center">
     <div class="col-6">
       <form (ngSubmit)="onFormSubmit()">
-        <div class="mb-3">
-          <select
-            class="form-select rounded-5"
-            id="personality"
-            name="personality"
-            [(ngModel)]="personality"
-            required
+        <ng-container *ngFor="let question of questions; let i = index">
+          <div *ngIf="currentQuestionIndex === i">
+            <!-- Domanda corrente -->
+            <label class="form-label mb-3 fs-5"
+              >{{ i + 1 }}. {{ question.text }}</label
+            >
+            <div class="btn-group" role="group">
+              <!-- Utilizza un loop per generare i pulsanti per le opzioni -->
+              <button
+                type="button"
+                class="btn btn-outline-dark rounded-5 me-3"
+                *ngFor="let option of question.options; let j = index"
+                (click)="selectAnswer(j)"
+              >
+                {{ option }}
+              </button>
+            </div>
+          </div>
+        </ng-container>
+
+        <div *ngIf="currentQuestionIndex === questions.length - 1">
+          <button
+            class="mt-2 form-button rounded-5 w-100 border-0 py-2"
+            type="submit"
           >
-            <option value="" disabled selected>Select Your Personality</option>
-            <option value="avventuroso">Avventuroso</option>
-            <option value="cultura">Interessato alla cultura</option>
-            <option value="rilassante">Rilassante</option>
-          </select>
+            Submit
+          </button>
         </div>
-
-        <div class="mb-3">
-          <input
-            type="number"
-            class="form-control rounded-5"
-            id="age"
-            name="age"
-            [(ngModel)]="age"
-            required
-          />
-        </div>
-
-        <div class="mb-3">
-          <input
-            placeholder="Budget"
-            type="number"
-            class="form-control bgcolor rounded-5"
-            id="budget"
-            name="budget"
-            [(ngModel)]="budget"
-            required
-          />
-        </div>
-
-        <button
-          class="mt-2 form-button rounded-5 w-100 border-0 py-2"
-          type="submit"
-        >
-          Submit
-        </button>
+        <div *ngIf="currentQuestionIndex < questions.length - 1"></div>
       </form>
     </div>
   </div>
 </div>
+
 <div *ngIf="destination">
   La meta turistica consigliata per te è: {{ destination }}
 </div>

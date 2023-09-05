@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './Pages/result/result.component';
 import { ReviewsComponent } from './Pages/reviews/reviews.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { ReviewsComponent } from './Pages/reviews/reviews.component';
     HeaderComponent,
     FormComponent,
     ResultComponent,
+
     ReviewsComponent
   ],
   imports: [

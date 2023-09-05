@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef } from '@angular/core';
 import { ImageData } from '../../Interfaces/image-data'; // Use correct relative path
+import { ActivatedRoute } from '@angular/router';
+
 
 
 
@@ -18,7 +20,9 @@ export class HomepageComponent {
 
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient ,private route: ActivatedRoute,private el: ElementRef) {}
+
+
 
   ngOnInit() {
     const apiKey = 'WWhWpB_gDB34rU2Nzj2XJKLoaGrSCgfIfqeCSsjIjgs';
@@ -35,5 +39,12 @@ export class HomepageComponent {
 
 
 
-}}
-
+}
+scrollToForm() {
+  // Esegui lo scorrimento animato verso l'elemento del form utilizzando JavaScript puro
+  const formElement = this.el.nativeElement.querySelector('#form');
+  if (formElement) {
+    formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+}

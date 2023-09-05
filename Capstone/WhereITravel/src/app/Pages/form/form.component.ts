@@ -15,9 +15,14 @@ export class FormComponent {
   budget: number = 0
   destination: string = ''
 
-  selectAnswer(questionIndex: number, option: string) {
-    this.userAnswers[questionIndex] = option;
+  selectAnswer(optionIndex: number) {
+    // Registra la risposta selezionata
+    this.userAnswers[this.currentQuestionIndex] = this.questions[this.currentQuestionIndex].options[optionIndex];
+    // Passa alla domanda successiva
+    this.nextQuestion();
   }
+
+
   answers: { dimension: string, score: number }[] = [
     { dimension: 'E', score: 3 }, // Esempio di risposta per la dimensione E/I
     { dimension: 'I', score: 2 },
@@ -28,6 +33,14 @@ export class FormComponent {
     { dimension: 'J', score: 4 }, // Esempio di risposta per la dimensione J/P
     { dimension: 'P', score: 3 },
   ];
+
+  currentQuestionIndex: number = 0;
+
+  nextQuestion() {
+    if (this.currentQuestionIndex < this.questions.length - 1) {
+      this.currentQuestionIndex++;
+    }
+  }
 
 
   userAnswers: string[] = [];
@@ -173,7 +186,7 @@ export class FormComponent {
     return totalScore;
   }
 
-  /*onFormSubmit(form: NgForm) {
+  onFormSubmit() {
     // Calcola il tipo di personalità MBTI basato sulle risposte dell'utente
     const mbtiResult = this.getMBTIResult();
 
@@ -182,10 +195,8 @@ export class FormComponent {
 
     // Reindirizza l'utente alla pagina dei risultati con la destinazione
     this.router.navigate(['results'], { queryParams: { destination: destination } });
+  }
 
-    // Resetta il form
-    this.resetForm(form);
-  }*/
 
 
 
@@ -198,7 +209,7 @@ export class FormComponent {
   }
 
 
-  onFormSubmit() {
+  /*onFormSubmit() {
     if (this.personality === 'avventuroso') {
       if (this.age < 30) {
         this.destination = 'Montagna';
@@ -218,7 +229,7 @@ export class FormComponent {
 
     this.router.navigate(['results'], { queryParams: { destination: this.destination } });
     this.formRef.resetForm()
-  }
+  }*/
 
 
 }
