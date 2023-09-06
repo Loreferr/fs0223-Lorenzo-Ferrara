@@ -67,18 +67,29 @@ button:hover{
 .form-container {
   margin-top: 50px;
   height: 1000px;
+  padding: 0;
+
 }
 
 .bg1{
-
+  background-image: url(../../../assets/img/neom-EbIvcXzgU4s-unsplash.jpg);
   background-position: center;
   background-size: cover;
-  height: 800px;
+
 
 }
 
 .p-bg{
   background-color: rgba(243, 237, 237, 0.212);
+
+
+}
+
+
+
+h3{
+  padding-left: 173px;
+
 
 
 }

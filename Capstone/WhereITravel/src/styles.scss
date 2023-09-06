@@ -5,5 +5,20 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
   *{
+
     font-family: "montserrat";
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap');
+
+  h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 3.5em;
+  }
+
+  h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 4em;
   }
