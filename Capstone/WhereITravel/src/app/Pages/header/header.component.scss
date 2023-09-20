@@ -1,7 +1,10 @@
 
 
 header {
+
   overflow-x: hidden;
+
+  transition: background-color 0.3s ease;
 }
 
 ul{
@@ -18,34 +21,31 @@ ul{
 
 
 a{
+  font-size: 1em;
+color: snow;
 
-  color: white;
-  opacity: 70%;
+opacity: 70%;
 }
 
 a:hover{
+color: snow;
   opacity: 100%;
-  color: white;
+
 }
 
 button{
   font-size: 1.2em;
-  opacity: 70%;
+
   border-radius: 30px;
   height: 50px;
-  width: 120px;
+
   border: 0;
   background-color: transparent;
-  color: white;
+
   transition: 300ms;
 }
 
-button:hover{
-  background-color: white;
-  color: black;
-  opacity: 100%;
-  box-shadow:0px 0px 12px 5px rgba(214, 210, 210, 0.4) ;
-}
+
 
 form{
 
@@ -88,7 +88,7 @@ form{
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: snow;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 
@@ -97,12 +97,37 @@ form{
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-ng-template{
-  border-radius: 50px;
+
+
+
+.user{
+  font-size: 1.5em;
+  opacity: 70%;
+}
+
+.user:hover{
+
+  opacity: 100%;
+}
+/* Imposta uno stile diverso quando l'header è "fuori vista" */
+
+
+.authbtn{
+  width: 120px;
 }
 
 
 
+.authbtn:hover{
+  background-color:snow;
+  color: black;
+  opacity: 100%;
+  box-shadow:0px 0px 12px 5px rgba(214, 210, 210, 0.4) ;
+}
 
+/* Nel tuo file CSS */
+.descriptionfield{
+ height: 400px;
+}
 
 

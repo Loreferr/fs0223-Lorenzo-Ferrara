@@ -1,44 +1,66 @@
 <!-- result.component.html -->
-<app-header></app-header>
-<div class="result-container text-center">
-  <ngb-carousel
-    #carousel
-    [interval]="3000"
-    [pauseOnHover]="pauseOnHover"
-    [pauseOnFocus]="pauseOnFocus"
-    (slide)="onSlide($event)"
-  >
-    <ng-template ngbSlide *ngFor="let img of images; index as i">
-      <div class="carousel-caption"></div>
-      <a
-        href="https://www.google.fr/?q=Number+{{ i + 1 }}"
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-      >
-        <div class="picsum-img-wrapper">
-          <img [src]="img" alt="My image {{ i + 1 }} description" />
+<div class="page">
+  <app-header></app-header>
+  <div class="result-container">
+    <div class="row">
+      <!-- Colonna per lo slider -->
+      <div class="col-md-6">
+        <ngb-carousel
+          #carousel
+          [interval]="3000"
+          [pauseOnHover]="pauseOnHover"
+          [pauseOnFocus]="pauseOnFocus"
+          (slide)="onSlide($event)"
+        >
+          <!-- Slides dello slider -->
+          <ng-template ngbSlide *ngFor="let img of images; index as i">
+            <div class="carousel-caption"></div>
+            <a
+              href="https://www.google.fr/?q=Number+{{ i + 1 }}"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <div class="picsum-img-wrapper">
+                <img
+                  class="image-slider"
+                  [src]="img"
+                  alt="My image {{ i + 1 }} description"
+                />
+              </div>
+            </a>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+
+      <!-- Colonna per il testo -->
+      <div class="col-md-6 px-5 slide2">
+        <!-- Visualizza la destinazione selezionata -->
+        <h1 class="text-center mb-4">
+          La tua destinazione ideale è: <br />
+          <strong class="mt-2">{{ destination }}</strong>
+        </h1>
+
+        <p class="description">{{ description }}</p>
+
+        <!-- Mostra i luoghi di interesse per la personalità selezionata -->
+        <h3>Luoghi di Interesse:</h3>
+        <div class="row justify-content-center align-items-center">
+          <ng-container *ngFor="let interest of interests">
+            <div class="col-3 mt-3 fs-5">
+              <p class="mb-3">{{ interest }}</p>
+              <img
+                class="img-fluid interest-image"
+                [src]="interestImages[interest]"
+                alt="{{ interest }} Image"
+                (click)="openImageInDetail(interestImages[interest])"
+              />
+            </div>
+          </ng-container>
         </div>
-      </a>
-    </ng-template>
-  </ngb-carousel>
 
-  <hr />
-
-  <h2>Risultati del Test di Personalità</h2>
-
-  <!-- Visualizza la destinazione selezionata -->
-  <p>
-    La tua destinazione ideale è: <strong>{{ destination }}</strong>
-  </p>
-
-  <!-- Elenco delle recensioni -->
-  <h3>Recensioni:</h3>
-  <div *ngFor="let review of reviews" class="review">
-    <p>
-      <strong>{{ review.author }}</strong
-      >: {{ review.comment }}
-    </p>
+        <!-- Elenco delle recensioni -->
+      </div>
+    </div>
   </div>
 </div>
-
 <!-- Aggiungi uno stile CSS per personalizzare la pagina -->

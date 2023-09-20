@@ -1,6 +1,7 @@
 /* result.component.scss */
 
 .result-container {
+
   height: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -15,15 +16,43 @@ h2 {
   font-size: 24px;
   color: #333;
 }
+h2 {
+  font-size: 24px;
+  color: #333;
+}
+.page{
+  background-image: url(../../../assets/img/vista-della-mappa-di-viaggio-del-mondo-con-la-lente-d-ingrandimento.jpg);
 
-h3 {
-  font-size: 18px;
-  margin-top: 20px;
-  color: #555;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .review {
   margin-top: 10px;
 }
 
+.description {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+
+
+  .interest-image {
+    width: 300px; /* Modifica questa larghezza come desideri */
+    height: 300px; /* Modifica questa altezza come desideri */
+    cursor: pointer;
+  }
+
+  /* results.component.css */
+.image-slider {
+  max-width: 100%; /* Imposta la larghezza massima al 100% del contenitore */
+  height: 700px; /* Mantieni l'aspetto originale rispettando l'aspetto */
+}
+
+.slide2{
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.534);/* Mantieni l'aspetto originale rispettando l'aspetto */
+}
 /* Aggiungi ulteriori stili secondo le tue esigenze */

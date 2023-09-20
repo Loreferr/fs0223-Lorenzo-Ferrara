@@ -57,11 +57,6 @@
 </div>
 
 <!-- Visualizza i contatori -->
-<div *ngFor="let dimension of getCounterKeys()">
-  <p>{{ dimension.replace("Dimensione ", "") }}: {{ counters[dimension] }}</p>
-</div>
-
-<p>Stringa di personalità: {{ generatePersonalityString() }}</p>
 
 <!--<div *ngIf="destination">
   La meta turistica consigliata per te è: {{ destination }}

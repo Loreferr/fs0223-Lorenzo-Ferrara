@@ -1,4 +1,7 @@
-<header class="d-flex align-items-center justify-content-between py-3 mb-4">
+<header
+  id="site-header"
+  class="d-flex align-items-center justify-content-between mb-4"
+>
   <div class="col-3"></div>
   <ul class="nav col-12 col-md-6 mb-2 justify-content-center mb-md-0">
     <li><a [routerLink]="['/homepage']" class="nav-link px-2">Home</a></li>
@@ -7,20 +10,103 @@
   </ul>
 
   <div class="col-md-3 auth">
-    <button type="button" (click)="openVerticallyCentered(Login)" class="me-3">
+    <!-- Bottone con il nome dell'utente quando è loggato -->
+    <div class="" *ngIf="isLoggedIn">
+      <button class="btn user text-light">Benvenuto {{ username }}</button>
+      <button class="btn btn-danger user" (click)="fakeLogout()">Logout</button>
+      <!-- Bottone Logout -->
+    </div>
+
+    <!-- Pulsanti di login e registrazione quando l'utente non è loggato -->
+    <button
+      type="button"
+      *ngIf="!isLoggedIn"
+      (click)="openVerticallyCentered(Login)"
+      class="me-3 authbtn"
+    >
       Login
     </button>
-
-    <button type="button" (click)="openVerticallyCentered(Register)">
+    <button
+      class="authbtn"
+      type="button"
+      *ngIf="!isLoggedIn"
+      (click)="openVerticallyCentered(Register)"
+    >
       Register
     </button>
+    <div *ngIf="isLoggedIn">
+      <div class="">
+        <button
+          (click)="openVerticallyCentered(Review)"
+          class="btn user text-light"
+        >
+          Crea una Recensione
+        </button>
+
+        <!-- Bottone Logout -->
+      </div>
+    </div>
   </div>
 </header>
 
-<ng-template #Register let-modal>
-  <div class="modal-content rounded-4 shadow">
+<ng-template #Review let-modal>
+  <div class="modal-content shadow">
     <div class="modal-body p-5 pt-0">
-      <form>
+      <form (ngSubmit)="submitReview()">
+        <img
+          class="mb-4"
+          src="https://cdn.icon-icons.com/icons2/2389/PNG/512/spacex_logo_icon_144865.png"
+          alt=""
+          width="80"
+          height="80"
+        />
+
+        <div class="form-floating my-2">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            name="citta"
+            [(ngModel)]="reviewData.city"
+          />
+          <label for="floatingInput">Citta</label>
+        </div>
+        <div class="form-floating my-2">
+          <input
+            type="text"
+            class="form-control descriptionfield"
+            id="floatingPassword"
+            placeholder="Password"
+            name="descrizione"
+            [(ngModel)]="reviewData.description"
+          />
+          <label for="floatingPassword">Descrizione</label>
+        </div>
+        <div class="form-floating my-2">
+          <input
+            type="number"
+            class="form-control"
+            id="floatingInput"
+            placeholder="username@example.com"
+            name="rating"
+            [(ngModel)]="reviewData.rating"
+          />
+          <label for="floatingInput">Rating</label>
+        </div>
+
+        <button class="btn btn btn-outline-dark w-100 py-2" type="submit">
+          Crea
+        </button>
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #Register let-modal>
+  <div class="modal-content shadow">
+    <div class="modal-body p-5 pt-0">
+      <form (ngSubmit)="registerUser()">
         <img
           class="mb-4"
           src="https://cdn.icon-icons.com/icons2/2389/PNG/512/spacex_logo_icon_144865.png"
@@ -32,13 +118,14 @@
 
         <div class="form-floating my-2">
           <input
-            type="email"
+            type="text"
             class="form-control"
             id="floatingInput"
             placeholder="name@example.com"
-            name="email"
+            name="name"
+            [(ngModel)]="registrationData.name"
           />
-          <label for="floatingInput">Email address</label>
+          <label for="floatingInput">Name</label>
         </div>
         <div class="form-floating my-2">
           <input
@@ -47,28 +134,31 @@
             id="floatingPassword"
             placeholder="Password"
             name="password"
+            [(ngModel)]="registrationData.username"
           />
-          <label for="floatingPassword">Password</label>
+          <label for="floatingPassword">Username</label>
         </div>
         <div class="form-floating my-2">
           <input
             type="text"
             class="form-control"
             id="floatingInput"
-            placeholder="name@example.com"
-            name="name"
+            placeholder="username@example.com"
+            name="username"
+            [(ngModel)]="registrationData.email"
           />
-          <label for="floatingInput">Name</label>
+          <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
           <input
-            type="text"
+            type="email"
             class="form-control"
             id="floatingInput"
-            placeholder="name@example.com"
-            name="surname"
+            placeholder="email@example.com"
+            name="password"
+            [(ngModel)]="registrationData.password"
           />
-          <label for="floatingInput">Surname</label>
+          <label for="floatingInput">Password</label>
         </div>
 
         <div class="form-check text-start my-3">
@@ -77,6 +167,8 @@
             type="checkbox"
             value="remember-me"
             id="flexCheckDefault"
+            placeholder="password"
+            name="password"
           />
           <label class="form-check-label" for="flexCheckDefault">
             Remember me
@@ -85,7 +177,7 @@
         <button class="btn btn-dark w-100 py-2" type="submit">Register</button>
         <p class="mt-3 mb-3 text-center">
           Already Signed up?
-          <a class="text-primary">Log in</a>
+          <a class="text-primary" (click)="switchToLogin()">Log in</a>
         </p>
       </form>
     </div>
@@ -93,9 +185,9 @@
 </ng-template>
 
 <ng-template #Login let-modal>
-  <div class="modal-content rounded-5 shadow">
+  <div class="modal-content shadow">
     <div class="modal-body p-5 pt-0">
-      <form>
+      <form (ngSubmit)="login()">
         <div class="d-flex align-items-center justify-content-between">
           <img
             class=""
@@ -107,7 +199,6 @@
           <button
             type="button"
             class="btn-close"
-            aria-label="Close"
             (click)="modal.dismiss('Cross click')"
           ></button>
         </div>
@@ -118,10 +209,11 @@
             type="email"
             class="form-control"
             id="floatingInput"
-            placeholder="name@example.com"
-            name="email"
+            placeholder="username"
+            name="username"
+            [(ngModel)]="username"
           />
-          <label for="floatingInput">Email address</label>
+          <label for="floatingInput">Username</label>
         </div>
         <div class="form-floating my-2">
           <input
@@ -130,22 +222,20 @@
             id="floatingPassword"
             placeholder="Password"
             name="password"
+            [(ngModel)]="password"
           />
           <label for="floatingPassword">Password</label>
         </div>
 
         <div class="form-check text-start my-3">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="remember-me"
-            id="flexCheckDefault"
-          />
           <label class="form-check-label" for="flexCheckDefault">
             Remember me
           </label>
         </div>
-        <button class="btn btn-dark w-100 py-2" type="submit">Register</button>
+        <button class="btn btn-dark w-100 py-2" type="submit">Login</button>
+        <div *ngIf="loginError" class="alert alert-danger mt-3">
+          Credenziali errate. Riprova.
+        </div>
         <p class="mt-3 mb-3 text-center">
           Already Signed up?
           <a class="text-primary">Log in</a>

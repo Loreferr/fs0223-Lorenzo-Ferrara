@@ -2,6 +2,10 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+/* styles.css */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+
 
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
   *{
@@ -22,3 +26,9 @@
     font-weight: 600;
     font-size: 3.5em;
   }
+
+h5{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+}

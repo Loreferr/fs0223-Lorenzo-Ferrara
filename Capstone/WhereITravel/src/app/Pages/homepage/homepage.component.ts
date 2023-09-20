@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef } from '@angular/core';
 import { ImageData } from '../../Interfaces/image-data'; // Use correct relative path
 import { ActivatedRoute } from '@angular/router';
+import { ReviewService } from 'src/app/reviews.service';
+import { faStar,  } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -15,18 +17,35 @@ export class HomepageComponent {
 
 
 
-
+  faStar = faStar;
+  // HeaderComponent
+maxDescriptionLength: number = 150; // Puoi impostare il limite a tuo piacimento
+currentUsername: string | null = null;
   backgroundImages: string[] = [];
+  reviews: any[] = [];
 
 
 
-  constructor(private http: HttpClient ,private route: ActivatedRoute,private el: ElementRef) {}
+  constructor(private http: HttpClient ,private route: ActivatedRoute,private el: ElementRef, private reviewService: ReviewService) {}
 
 
 
   ngOnInit() {
     const apiKey = 'WWhWpB_gDB34rU2Nzj2XJKLoaGrSCgfIfqeCSsjIjgs';
     const apiUrl = `https://api.unsplash.com/photos/random?count=1&client_id=${apiKey}&query=travel&orientation=landscape&width=2500`;
+
+    this.reviewService.getReviews().subscribe((data) => {
+      this.reviews = data;
+      this.reviews = this.reviews.slice(-6);
+      this.reviews.forEach((review) => {
+        review.ratingStars = this.reviewService.convertRatingToStars(review.rating);
+      });
+
+      for (const review of this.reviews) {
+        review.displayedDescription = review.description.slice(0, this.maxDescriptionLength);
+        review.showFull = false; // Inizialmente nascondi la descrizione completa
+      }
+    });
 
     this.http.get<ImageData[]>(apiUrl) // Usiamo il tipo ImageData[]
       .subscribe((data: ImageData[]) => { // Tipo corretto per i dati
@@ -35,11 +54,27 @@ export class HomepageComponent {
       });
 
 
-
+      const storedUsername = localStorage.getItem('username');
+  if (storedUsername !== null) {
+    this.currentUsername = storedUsername;
+  }
 
 
 
 }
+
+// HeaderComponent
+showFullDescription(review: any): void {
+  review.showFull = !review.showFull; // Usa una proprietà 'showFull' per tener traccia dello stato
+
+  // Se la descrizione è estesa, mostra solo la parte limitata al clic su "Leggi di più"
+  if (review.showFull) {
+    review.displayedDescription = review.description;
+  } else {
+    review.displayedDescription = review.description.slice(0, this.maxDescriptionLength);
+  }
+}
+
 scrollToForm() {
   // Esegui lo scorrimento animato verso l'elemento del form utilizzando JavaScript puro
   const formElement = this.el.nativeElement.querySelector('#form');
@@ -47,4 +82,7 @@ scrollToForm() {
     formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+
+
+
 }

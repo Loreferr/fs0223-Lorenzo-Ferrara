@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { Review } from 'src/app/Interfaces/reviews';
 
+
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
@@ -19,7 +20,12 @@ export class ResultComponent {
     // ... altre recensioni
   ];
 destination: string = '' ;
+description: string = '' ;
+interests: string[] = [];
 images: string[] = [];
+interestImages: Record<string, string> = {};
+
+
 
 
 
@@ -28,9 +34,15 @@ images: string[] = [];
 ngOnInit() {
   this.route.queryParams.subscribe(params => {
     this.destination = params['destination'];
+    this.description = params['description'];
+    this.interests = params['interests']
     if (this.destination) {
       // Esegui la richiesta HTTP per ottenere le immagini basate sulla destinazione
       this.getImagesFromUnsplash(this.destination);
+    }
+    if (this.interests && this.interests.length > 0) {
+      // Carica le immagini dai luoghi di interesse
+      this.getInterestFromUnsplash(this.interests);
     }
   });
 }
@@ -88,6 +100,34 @@ getImagesFromUnsplash(destination: string) {
   );
 
 }
+
+getInterestFromUnsplash(placesOfInterest: string[]) {
+  const apiKey = 'WWhWpB_gDB34rU2Nzj2XJKLoaGrSCgfIfqeCSsjIjgs';
+
+  placesOfInterest.forEach((place) => {
+    const apiUrl = `https://api.unsplash.com/photos/random?count=1&client_id=${apiKey}&query=${place}&orientation=landscape`;
+
+    this.http.get<any[]>(apiUrl).subscribe(
+      (data: any[]) => {
+        const imageUrl = data[0].urls.regular;
+        this.interestImages[place] = imageUrl;
+      },
+      (error) => {
+        console.error(`Errore durante il recupero delle immagini per ${place}:`, error);
+      }
+    );
+  });
+}
+
+openImageInDetail(imageUrl: string) {
+  window.open(imageUrl, '_blank');
+}
+
+
+
+
+
+
 
 
 }
