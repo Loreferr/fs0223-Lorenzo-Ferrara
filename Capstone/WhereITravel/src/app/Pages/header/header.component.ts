@@ -1,13 +1,15 @@
+import { HomeComponent } from './../../../../../../m3/s4/BW3/reddit/src/app/pages/home/home.component';
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/auth-service.service';
 import { ReviewService } from 'src/app/reviews.service';
-
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
+
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
@@ -19,7 +21,7 @@ export class HeaderComponent {
 
   password: string = '';
 
-
+  headerfixed:boolean = false;
 
   loginError: boolean = false;
 errorMessage: string = '';
@@ -38,6 +40,16 @@ username: string = '';
   }
   }
 
+
+  @HostListener(  'window:scroll', ['$event']) onscroll(){
+
+    if (window.scrollY > 100) {
+      this.headerfixed = true
+    }
+    else {
+      this.headerfixed = false
+    }
+  }
 
   ngOnInit() {
 
@@ -186,6 +198,7 @@ username: string = '';
           };
 
           console.log('La pagina verrà aggiornata automaticamente.');
+
         window.location.reload(); // Ricarica la pagina automaticamente
         },
         (error) => {

@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { Review } from 'src/app/Interfaces/reviews';
+import { ReviewService } from 'src/app/reviews.service';
 
 
 @Component({
@@ -12,22 +14,20 @@ import { Review } from 'src/app/Interfaces/reviews';
 })
 export class ResultComponent {
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient, private reviewService: ReviewService) {}
 
-  reviews: Review[] = [
-    { author: 'Utente 1', comment: 'Ottimo posto!' },
-    { author: 'Utente 2', comment: 'Molto suggestivo.' },
-    // ... altre recensioni
-  ];
+
 destination: string = '' ;
 description: string = '' ;
 interests: string[] = [];
 images: string[] = [];
 interestImages: Record<string, string> = {};
+maxDescriptionLength: number = 300;
+currentUsername: string | null = null;
 
 
 
-
+reviews: any[] = [];
 
 
 
@@ -45,6 +45,30 @@ ngOnInit() {
       this.getInterestFromUnsplash(this.interests);
     }
   });
+
+  this.reviewService.getReviews().subscribe((data: { city: string }[]) => {
+    // Trasforma la destinazione e le città delle recensioni in minuscolo per uniformità
+    const destinationLower = this.destination.toLowerCase();
+
+    // Filtra le recensioni in base alla città di destinazione (confronto flessibile)
+    this.reviews = data.filter((review) => destinationLower.includes(review.city.toLowerCase()));
+  });
+
+
+
+
+}
+
+getStars(rating: number): any[] {
+  const stars: any[] = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      stars.push(faStar); // Icona stella piena
+    } else {
+      stars.push(faStar); // Icona stella vuota
+    }
+  }
+  return stars;
 }
 /*images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/2000/800`);*/
 paused = false;

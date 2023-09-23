@@ -1,5 +1,143 @@
 <div class="background">
+  <app-header></app-header>
   <div class="background-overlay">
-    <app-header></app-header>
+    <div class="container-fluid px-5">
+      <h1 class="text-center">Recensioni</h1>
+      <div class="row justify-content-center align-items-start">
+        <div class="col-3">
+          <form (ngSubmit)="getReviewsByCity()" #cityForm="ngForm">
+            <div class="mb-3">
+              <label for="exampleInputCity" class="form-label"
+                >Cerca Città</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputCity"
+                aria-describedby="cityHelp"
+                [(ngModel)]="city"
+                name="city"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Cerca</button>
+          </form>
+
+          <button (click)="loadAllReviews()" class="btn btn-outline-dark">
+            Tutte
+          </button>
+          <button
+            (click)="filterReviewsByAuthor()"
+            class="btn btn-outline-dark"
+          >
+            Create da Me
+          </button>
+        </div>
+        <div class="col-6">
+          <div *ngFor="let review of reviews" class="card mb-4 rounded-5">
+            <div class="card-body">
+              <h5 class="card-title">{{ review.city }}</h5>
+              <i
+                class="fa-solid fa-quote-left"
+                style="color: #ffbb00; font-size: 1.5em"
+              ></i>
+              <p class="card-text">
+                {{
+                  review.description.length <= maxDescriptionLength
+                    ? review.description
+                    : (review.description | slice : 0 : maxDescriptionLength)
+                }}
+                <span *ngIf="review.description.length > maxDescriptionLength">
+                  <a href="#">Leggi di più</a>
+                </span>
+              </p>
+              <i
+                class="fa-solid fa-quote-right"
+                style="color: #ffbb00; font-size: 1.5em"
+              ></i>
+              <p>
+                Rating:
+                <ng-container *ngFor="let star of getStars(review.rating)">
+                  <fa-icon [icon]="star"></fa-icon>
+                </ng-container>
+              </p>
+              <div class="row justify-content-between align-items-center">
+                <p class="author">@{{ review.author || currentUsername }}</p>
+                <div *ngIf="showDeleteButton">
+                  <button
+                    (click)="deleteReview(review.id)"
+                    class="btn btn-danger"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                    (click)="openVerticallyCentered(Review)"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
   </div>
 </div>
+
+<ng-template #Review let-modal>
+  <div class="modal-content shadow">
+    <div class="modal-body p-5 pt-0">
+      <form>
+        <img
+          class="mb-4"
+          src="https://cdn.icon-icons.com/icons2/2389/PNG/512/spacex_logo_icon_144865.png"
+          alt=""
+          width="80"
+          height="80"
+        />
+
+        <div class="form-floating my-2">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            name="citta"
+            [(ngModel)]="UpdatedReviewData.city"
+          />
+          <label for="floatingInput">Citta</label>
+        </div>
+        <div class="form-floating my-2">
+          <input
+            type="text"
+            class="form-control descriptionfield"
+            id="floatingPassword"
+            placeholder="Descrizione"
+            name="descrizione"
+            [(ngModel)]="UpdatedReviewData.description"
+          />
+          <label for="floatingPassword">Descrizione</label>
+        </div>
+        <div class="form-floating my-2">
+          <input
+            type="number"
+            class="form-control"
+            id="floatingInput"
+            placeholder="username@example.com"
+            name="rating"
+            min="1"
+            max="5"
+            required=""
+            [(ngModel)]="UpdatedReviewData.rating"
+          />
+          <label for="floatingInput">Rating</label>
+        </div>
+
+        <button type="button">Modifica</button>
+      </form>
+    </div>
+  </div>
+</ng-template>

@@ -19,7 +19,7 @@ export class HomepageComponent {
 
   faStar = faStar;
   // HeaderComponent
-maxDescriptionLength: number = 150; // Puoi impostare il limite a tuo piacimento
+maxDescriptionLength: number = 300; // Puoi impostare il limite a tuo piacimento
 currentUsername: string | null = null;
   backgroundImages: string[] = [];
   reviews: any[] = [];
@@ -36,10 +36,9 @@ currentUsername: string | null = null;
 
     this.reviewService.getReviews().subscribe((data) => {
       this.reviews = data;
+
+
       this.reviews = this.reviews.slice(-6);
-      this.reviews.forEach((review) => {
-        review.ratingStars = this.reviewService.convertRatingToStars(review.rating);
-      });
 
       for (const review of this.reviews) {
         review.displayedDescription = review.description.slice(0, this.maxDescriptionLength);
@@ -61,6 +60,20 @@ currentUsername: string | null = null;
 
 
 
+}
+
+
+
+getStars(rating: number): any[] {
+  const stars: any[] = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      stars.push(faStar); // Icona stella piena
+    } else {
+      stars.push(faStar); // Icona stella vuota
+    }
+  }
+  return stars;
 }
 
 // HeaderComponent

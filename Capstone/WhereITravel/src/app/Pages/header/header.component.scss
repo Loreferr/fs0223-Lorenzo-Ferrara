@@ -3,7 +3,7 @@
 header {
 
   overflow-x: hidden;
-
+  background-color: rgb(173, 169, 161);
   transition: background-color 0.3s ease;
 }
 
@@ -24,7 +24,7 @@ a{
   font-size: 1em;
 color: snow;
 
-opacity: 70%;
+
 }
 
 a:hover{
@@ -34,7 +34,7 @@ color: snow;
 }
 
 button{
-  font-size: 1.2em;
+  font-size: 1em;
 
   border-radius: 30px;
   height: 50px;
@@ -72,9 +72,7 @@ form{
 
 
 }
-.auth{
-  margin-left: 150px;
-}
+
 
 .nav-link{
   position: relative;
@@ -93,6 +91,16 @@ form{
     transition: transform 0.25s ease-out;
 
 }
+
+.account{
+  font-size: 1.2em;
+  color: snow;
+  text-decoration: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+
 .nav-link:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -127,7 +135,38 @@ form{
 
 /* Nel tuo file CSS */
 .descriptionfield{
- height: 400px;
+ height: 200px;
+ text-align: left;
+ overflow: hidden; /* Nasconde il testo che supera il bordo del campo */
+    white-space: pre-wrap;
+}
+
+.fixed{
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  transition: 0.5s linear;
+  background-color: rgba(173, 169, 161, 0.74);
+
+}
+
+.nofixed{
+  position: static;
+  top: -50px;
+  transition: 0.2s linear;
 }
 
 
+.logout{
+  width: 100px;
+  background-color: firebrick;
+}
+.logout:hover{
+scale: 1.2;
+}
+
+
+.dropdown{
+  position: relative;
+}

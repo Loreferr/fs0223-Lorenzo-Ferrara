@@ -31,10 +31,13 @@
     </div>
     <div class="row justify-content-center align-items-center">
       <div *ngFor="let review of reviews" class="col-4">
-        <div class="card mb-4">
-          <img src="..." class="card-img-top" alt="..." />
+        <div class="card mb-4 rounded-5">
           <div class="card-body">
             <h5 class="card-title">{{ review.city }}</h5>
+            <i
+              class="fa-solid fa-quote-left"
+              style="color: #ffbb00; font-size: 1.5em"
+            ></i>
             <p class="card-text">
               {{
                 review.description.length <= maxDescriptionLength
@@ -47,22 +50,17 @@
                 >
               </span>
             </p>
+            <i
+              class="fa-solid fa-quote-right"
+              style="color: #ffbb00; font-size: 1.5em"
+            ></i>
             <p>
               Rating:
-              <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-                <span
-                  [ngClass]="{
-                    'star-filled': star <= review.rating,
-                    'star-empty': star > review.rating
-                  }"
-                >
-                  <fa-icon
-                    [icon]="star <= review.rating ? faStar : faStar"
-                  ></fa-icon>
-                </span>
+              <ng-container *ngFor="let star of getStars(review.rating)">
+                <fa-icon [icon]="star"></fa-icon>
               </ng-container>
             </p>
-            <p>Autore: {{ review.author || currentUsername }}</p>
+            <p class="author">@{{ review.author || currentUsername }}</p>
           </div>
         </div>
       </div>

@@ -57,8 +57,37 @@
             </div>
           </ng-container>
         </div>
-
-        <!-- Elenco delle recensioni -->
+      </div>
+    </div>
+  </div>
+  <div class="row reviews justify-content-center align-items-center mt-5">
+    <div *ngFor="let review of reviews" class="col-4">
+      <div class="card mb-4 rounded-5">
+        <div class="card-body">
+          <h5 class="card-title">{{ review.city }}</h5>
+          <i
+            class="fa-solid fa-quote-left"
+            style="color: #ffbb00; font-size: 1.5em"
+          ></i>
+          <p class="card-text">
+            {{
+              review.description.length <= maxDescriptionLength
+                ? review.description
+                : (review.description | slice : 0 : maxDescriptionLength)
+            }}
+          </p>
+          <i
+            class="fa-solid fa-quote-right"
+            style="color: #ffbb00; font-size: 1.5em"
+          ></i>
+          <p>
+            Rating:
+            <ng-container *ngFor="let star of getStars(review.rating)">
+              <fa-icon [icon]="star"></fa-icon>
+            </ng-container>
+          </p>
+          <p class="author">@{{ review.author || currentUsername }}</p>
+        </div>
       </div>
     </div>
   </div>
